@@ -1,0 +1,33 @@
+# Credenciais
+.env
+
+# Arquivos internos
+.claude/
+/index.html
+modelo.md
+portfolio-context.md
+img/print.png
+scripts/csv/
+data/raw/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Power BI
+*.pbix
