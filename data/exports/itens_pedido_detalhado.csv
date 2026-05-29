@@ -1,0 +1,578 @@
+﻿item_id,pedido_id,tipo,quantidade,preco_unitario,subtotal,massa,borda,produto,sabores
+1,1,pizza,1,61.9,61.9,Grossa,Catupiry,,Chocolate com Morango + Carne Seca
+2,2,pizza,1,55.4,55.4,Fina,Catupiry,,Costela BBQ + Margherita
+3,2,produto,1,16.0,16.0,,,Brownie com Sorvete,
+4,3,pizza,1,42.9,42.9,Fina,Sem borda,,Calabresa
+5,4,pizza,1,64.9,64.9,Fina,Sem borda,,Camarão
+6,5,pizza,1,57.9,57.9,Integral,Catupiry,,Frango com Catupiry + Prestígio
+7,6,pizza,1,58.9,58.9,Tradicional,Catupiry,,Costela BBQ + Prestígio + Pepperoni
+8,6,pizza,1,65.9,65.9,Grossa,Catupiry,,Carne Seca
+9,7,pizza,1,58.9,58.9,Fina,Cheddar,,Pepperoni
+10,7,pizza,1,49.9,49.9,Grossa,Sem borda,,Prestígio
+11,7,pizza,1,53.4,53.4,Tradicional,Cheddar,,Napolitana + Nutella com Banana
+12,7,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+13,8,pizza,1,63.9,63.9,Integral,Catupiry,,Frango com Catupiry + Costela BBQ
+14,9,pizza,1,61.9,61.9,Grossa,Chocolate,,Pepperoni
+15,9,pizza,1,63.23,63.23,Fina,Cream Cheese,,Carne Seca + Camarão + Frango com Catupiry
+16,9,pizza,1,47.9,47.9,Tradicional,Chocolate,,Napolitana
+17,9,produto,2,12.0,24.0,,,Coca-Cola 2L,
+18,10,pizza,1,44.9,44.9,Integral,Sem borda,,Margherita
+19,10,produto,1,22.0,22.0,,,Batata Frita Grande,
+20,11,pizza,1,55.9,55.9,Integral,Chocolate,,Romeu e Julieta
+21,11,pizza,1,67.57,67.57,Integral,Cream Cheese,,Quatro Queijos + Frango com Catupiry + Camarão
+22,12,pizza,1,51.4,51.4,Integral,Cream Cheese,,Margherita + Mussarela
+23,12,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+24,13,pizza,1,54.9,54.9,Fina,Cheddar,,Chocolate com Morango
+25,13,pizza,1,57.57,57.57,Fina,Catupiry,,Carne Seca + Romeu e Julieta + Pepperoni
+26,13,produto,2,12.0,24.0,,,Coca-Cola 2L,
+27,14,pizza,1,76.9,76.9,Integral,Cream Cheese,,Camarão
+28,14,produto,2,22.0,44.0,,,Batata Frita Grande,
+29,15,pizza,1,54.57,54.57,Tradicional,Catupiry,,Prestígio + Margherita + Costela BBQ
+30,16,pizza,1,53.9,53.9,Fina,Cream Cheese,,Chocolate com Morango + Portuguesa
+31,16,produto,1,12.0,12.0,,,Coca-Cola 2L,
+32,17,pizza,1,56.9,56.9,Integral,Cream Cheese,,Romeu e Julieta + Portuguesa
+33,18,pizza,1,52.4,52.4,Grossa,Cheddar,,Napolitana + Romeu e Julieta
+34,18,pizza,1,53.9,53.9,Grossa,Cheddar,,Prestígio + Mussarela + Chocolate com Morango
+35,18,produto,1,16.0,16.0,,,Brownie com Sorvete,
+36,19,pizza,1,56.9,56.9,Tradicional,Catupiry,,Pepperoni + Calabresa + Carne Seca
+37,20,pizza,1,51.9,51.9,Grossa,Sem borda,,Romeu e Julieta + Nutella com Banana
+38,20,pizza,1,53.9,53.9,Integral,Chocolate,,Calabresa
+39,20,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+40,21,pizza,1,54.9,54.9,Grossa,Cream Cheese,,Portuguesa + Romeu e Julieta
+41,21,produto,1,16.0,16.0,,,Brownie com Sorvete,
+42,22,pizza,1,62.9,62.9,Tradicional,Cheddar,,Camarão + Frango com Catupiry + Costela BBQ
+43,23,pizza,1,53.9,53.9,Fina,Cream Cheese,,Prestígio + Frango com Catupiry
+44,24,pizza,1,51.9,51.9,Integral,Sem borda,,Chocolate com Morango + Portuguesa
+45,24,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+46,25,pizza,1,49.9,49.9,Integral,Catupiry,,Mussarela
+47,25,pizza,1,61.9,61.9,Grossa,Chocolate,,Nutella com Banana
+48,25,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+49,26,pizza,1,49.9,49.9,Tradicional,Cream Cheese,,Calabresa
+50,26,pizza,1,55.9,55.9,Integral,Cream Cheese,,Calabresa + Portuguesa
+51,26,produto,1,12.0,12.0,,,Coca-Cola 2L,
+52,27,pizza,1,55.4,55.4,Integral,Cream Cheese,,Frango com Catupiry + Margherita
+53,28,pizza,1,62.9,62.9,Integral,Catupiry,,Costela BBQ + Romeu e Julieta
+54,28,pizza,1,41.9,41.9,Fina,Sem borda,,Mussarela + Portuguesa
+55,29,pizza,1,53.9,53.9,Grossa,Chocolate,,Portuguesa
+56,29,produto,1,12.0,12.0,,,Coca-Cola 2L,
+57,30,pizza,1,60.9,60.9,Tradicional,Chocolate,,Pepperoni + Carne Seca
+58,30,produto,2,12.0,24.0,,,Coca-Cola 2L,
+59,31,pizza,1,64.9,64.9,Tradicional,Cheddar,,Costela BBQ
+60,31,pizza,1,58.23,58.23,Tradicional,Catupiry,,Carne Seca + Frango com Catupiry + Pepperoni
+61,32,pizza,1,53.4,53.4,Integral,Catupiry,,Calabresa + Napolitana
+62,32,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+63,33,pizza,1,54.23,54.23,Grossa,Sem borda,,Camarão + Frango com Catupiry + Napolitana
+64,33,pizza,1,58.9,58.9,Tradicional,Cream Cheese,,Portuguesa + Costela BBQ
+65,33,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+66,34,pizza,1,44.9,44.9,Fina,Sem borda,,Portuguesa
+67,34,pizza,1,53.9,53.9,Grossa,Cream Cheese,,Calabresa + Portuguesa
+68,35,pizza,1,60.9,60.9,Tradicional,Cream Cheese,,Quatro Queijos + Pepperoni
+69,35,pizza,1,63.9,63.9,Integral,Catupiry,,Nutella com Banana
+70,36,pizza,1,52.9,52.9,Grossa,Cream Cheese,,Calabresa
+71,36,produto,1,16.0,16.0,,,Brownie com Sorvete,
+72,37,pizza,1,65.9,65.9,Integral,Catupiry,,Camarão + Quatro Queijos + Romeu e Julieta
+73,37,produto,1,16.0,16.0,,,Brownie com Sorvete,
+74,38,pizza,1,55.9,55.9,Grossa,Chocolate,,Prestígio
+75,38,produto,1,18.0,18.0,,,Petit Gateau,
+76,39,pizza,1,61.9,61.9,Grossa,Catupiry,,Nutella com Banana
+77,40,pizza,1,56.4,56.4,Fina,Cream Cheese,,Napolitana + Carne Seca
+78,40,produto,1,22.0,22.0,,,Batata Frita Grande,
+79,41,pizza,1,60.23,60.23,Fina,Cheddar,,Camarão + Costela BBQ + Mussarela
+80,41,pizza,1,49.4,49.4,Tradicional,Cream Cheese,,Portuguesa + Margherita
+81,41,produto,2,18.0,36.0,,,Petit Gateau,
+82,42,pizza,1,62.9,62.9,Tradicional,Catupiry,,Carne Seca
+83,42,pizza,1,56.9,56.9,Grossa,Cream Cheese,,Prestígio
+84,43,pizza,1,54.57,54.57,Grossa,Sem borda,,Costela BBQ + Chocolate com Morango + Prestígio
+85,44,pizza,1,57.9,57.9,Fina,Catupiry,,Carne Seca + Prestígio
+86,45,pizza,1,61.9,61.9,Integral,Cheddar,,Nutella com Banana + Chocolate com Morango
+87,46,pizza,1,58.9,58.9,Integral,Cream Cheese,,Frango com Catupiry
+88,46,pizza,1,55.57,55.57,Fina,Cheddar,,Carne Seca + Calabresa + Chocolate com Morango
+89,46,pizza,1,51.9,51.9,Tradicional,Cream Cheese,,Portuguesa
+90,46,produto,1,28.0,28.0,,,Frango Frito,
+91,47,pizza,1,41.9,41.9,Tradicional,Sem borda,,Napolitana
+92,48,pizza,1,62.9,62.9,Fina,Chocolate,,Carne Seca + Chocolate com Morango + Camarão
+93,49,pizza,1,47.9,47.9,Fina,Catupiry,,Napolitana
+94,49,pizza,1,63.9,63.9,Integral,Cream Cheese,,Costela BBQ + Romeu e Julieta
+95,49,produto,1,18.0,18.0,,,Petit Gateau,
+96,50,pizza,1,40.4,40.4,Fina,Sem borda,,Napolitana + Mussarela
+97,51,pizza,1,55.4,55.4,Grossa,Catupiry,,Pepperoni + Margherita
+98,51,produto,2,12.0,24.0,,,Coca-Cola 2L,
+99,52,pizza,1,58.23,58.23,Tradicional,Catupiry,,Chocolate com Morango + Pepperoni + Quatro Queijos
+100,52,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+101,53,pizza,1,58.9,58.9,Fina,Cream Cheese,,Chocolate com Morango + Quatro Queijos
+102,53,produto,1,22.0,22.0,,,Batata Frita Grande,
+103,54,pizza,1,43.9,43.9,Integral,Sem borda,,Mussarela
+104,54,pizza,1,64.9,64.9,Tradicional,Sem borda,,Camarão
+105,54,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+106,55,pizza,1,57.9,57.9,Tradicional,Cream Cheese,,Chocolate com Morango + Pepperoni
+107,55,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+108,56,pizza,1,52.9,52.9,Fina,Cheddar,,Romeu e Julieta + Chocolate com Morango
+109,57,pizza,1,54.9,54.9,Tradicional,Catupiry,,Chocolate com Morango
+110,58,pizza,1,54.9,54.9,Grossa,Cheddar,,Romeu e Julieta + Prestígio
+111,58,pizza,1,51.9,51.9,Fina,Catupiry,,Frango com Catupiry + Portuguesa
+112,58,produto,1,4.0,4.0,,,Água Mineral 500ml,
+113,59,pizza,1,65.9,65.9,Grossa,Cheddar,,Chocolate com Morango + Camarão
+114,59,pizza,1,53.9,53.9,Tradicional,Cream Cheese,,Prestígio
+115,59,produto,2,12.0,24.0,,,Coca-Cola 2L,
+116,60,pizza,1,45.9,45.9,Fina,Cheddar,,Margherita
+117,60,pizza,1,54.9,54.9,Grossa,Cheddar,,Pepperoni + Mussarela
+118,60,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+119,61,pizza,1,57.9,57.9,Integral,Cheddar,,Frango com Catupiry
+120,62,pizza,1,50.9,50.9,Grossa,Chocolate,,Mussarela + Romeu e Julieta
+121,63,pizza,1,53.9,53.9,Integral,Sem borda,,Calabresa + Quatro Queijos
+122,63,pizza,1,75.9,75.9,Integral,Chocolate,,Camarão
+123,64,pizza,1,41.9,41.9,Fina,Sem borda,,Napolitana
+124,65,pizza,1,53.9,53.9,Fina,Cream Cheese,,Prestígio
+125,65,pizza,1,58.9,58.9,Integral,Cream Cheese,,Prestígio
+126,65,produto,1,18.0,18.0,,,Petit Gateau,
+127,66,pizza,1,55.9,55.9,Integral,Sem borda,,Portuguesa + Carne Seca
+128,66,pizza,1,56.9,56.9,Grossa,Cheddar,,Mussarela + Margherita + Camarão
+129,66,pizza,1,47.9,47.9,Tradicional,Chocolate,,Napolitana
+130,66,produto,1,16.0,16.0,,,Brownie com Sorvete,
+131,67,pizza,1,53.57,53.57,Grossa,Sem borda,,Pepperoni + Carne Seca + Napolitana
+132,67,pizza,1,48.9,48.9,Tradicional,Cream Cheese,,Mussarela + Romeu e Julieta
+133,67,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+134,68,pizza,1,51.23,51.23,Grossa,Sem borda,,Nutella com Banana + Portuguesa + Frango com Catupiry
+135,68,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+136,69,pizza,1,52.9,52.9,Integral,Sem borda,,Carne Seca + Mussarela
+137,69,pizza,1,46.9,46.9,Integral,Sem borda,,Napolitana
+138,70,pizza,1,55.9,55.9,Tradicional,Cream Cheese,,Chocolate com Morango
+139,70,pizza,1,51.9,51.9,Fina,Cheddar,,Prestígio + Portuguesa
+140,70,pizza,1,52.9,52.9,Fina,Catupiry,,Portuguesa + Chocolate com Morango
+141,71,pizza,1,54.9,54.9,Grossa,Chocolate,,Mussarela + Nutella com Banana
+142,71,produto,2,10.0,20.0,,,Guaraná Antarctica 2L,
+143,72,pizza,1,63.9,63.9,Grossa,Chocolate,,Quatro Queijos
+144,72,pizza,1,50.57,50.57,Tradicional,Cheddar,,Pepperoni + Napolitana + Mussarela
+145,72,produto,1,16.0,16.0,,,Brownie com Sorvete,
+146,73,pizza,1,57.9,57.9,Grossa,Chocolate,,Romeu e Julieta + Chocolate com Morango + Nutella com Banana
+147,73,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+148,74,pizza,1,51.4,51.4,Tradicional,Chocolate,,Chocolate com Morango + Napolitana
+149,74,pizza,1,53.9,53.9,Tradicional,Cream Cheese,,Prestígio
+150,75,pizza,1,63.9,63.9,Grossa,Cheddar,,Carne Seca + Pepperoni
+151,76,pizza,1,62.9,62.9,Grossa,Cheddar,,Chocolate com Morango + Costela BBQ
+152,77,pizza,1,55.57,55.57,Grossa,Chocolate,,Nutella com Banana + Margherita + Frango com Catupiry
+153,77,produto,1,28.0,28.0,,,Frango Frito,
+154,78,pizza,1,53.9,53.9,Fina,Cheddar,,Chocolate com Morango + Prestígio
+155,78,produto,1,12.0,12.0,,,Coca-Cola 2L,
+156,79,pizza,1,50.9,50.9,Integral,Catupiry,,Margherita
+157,79,pizza,1,49.9,49.9,Grossa,Catupiry,,Margherita + Napolitana
+158,79,pizza,1,63.9,63.9,Grossa,Chocolate,,Quatro Queijos
+159,79,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+160,80,pizza,1,55.57,55.57,Tradicional,Cheddar,,Calabresa + Carne Seca + Chocolate com Morango
+161,81,pizza,1,63.9,63.9,Integral,Catupiry,,Nutella com Banana + Pepperoni
+162,82,pizza,1,52.23,52.23,Integral,Sem borda,,Napolitana + Romeu e Julieta + Quatro Queijos
+163,82,pizza,1,51.57,51.57,Fina,Cream Cheese,,Chocolate com Morango + Portuguesa + Margherita
+164,82,pizza,1,62.23,62.23,Fina,Chocolate,,Camarão + Chocolate com Morango + Quatro Queijos
+165,82,produto,1,4.0,4.0,,,Água Mineral 500ml,
+166,83,pizza,1,57.9,57.9,Grossa,Cheddar,,Pepperoni + Portuguesa
+167,83,pizza,1,52.9,52.9,Fina,Chocolate,,Prestígio
+168,83,produto,2,12.0,24.0,,,Coca-Cola 2L,
+169,84,pizza,1,67.9,67.9,Integral,Cheddar,,Carne Seca
+170,84,pizza,1,51.9,51.9,Grossa,Sem borda,,Chocolate com Morango
+171,84,pizza,1,54.57,54.57,Fina,Chocolate,,Margherita + Carne Seca + Chocolate com Morango
+172,85,pizza,1,52.9,52.9,Grossa,Cheddar,,Chocolate com Morango + Mussarela
+173,85,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+174,86,pizza,1,53.57,53.57,Tradicional,Cream Cheese,,Calabresa + Carne Seca + Margherita
+175,86,produto,1,22.0,22.0,,,Batata Frita Grande,
+176,87,pizza,1,61.9,61.9,Grossa,Chocolate,,Nutella com Banana
+177,88,pizza,1,67.9,67.9,Integral,Cheddar,,Carne Seca
+178,88,pizza,1,73.9,73.9,Grossa,Catupiry,,Camarão
+179,89,pizza,1,52.9,52.9,Fina,Cheddar,,Frango com Catupiry
+180,89,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+181,90,pizza,1,68.9,68.9,Integral,Cream Cheese,,Costela BBQ + Quatro Queijos
+182,90,pizza,1,55.9,55.9,Grossa,Cheddar,,Frango com Catupiry
+183,90,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+184,91,pizza,1,53.9,53.9,Grossa,Sem borda,,Quatro Queijos + Prestígio
+185,92,pizza,1,67.9,67.9,Grossa,Sem borda,,Camarão
+186,92,pizza,1,64.23,64.23,Integral,Cream Cheese,,Portuguesa + Costela BBQ + Nutella com Banana
+187,93,pizza,1,56.9,56.9,Grossa,Catupiry,,Calabresa + Pepperoni
+188,94,pizza,1,68.9,68.9,Grossa,Cream Cheese,,Costela BBQ
+189,94,pizza,1,48.9,48.9,Grossa,Sem borda,,Quatro Queijos + Calabresa + Margherita
+190,94,produto,1,4.0,4.0,,,Água Mineral 500ml,
+191,95,pizza,1,51.23,51.23,Tradicional,Catupiry,,Chocolate com Morango + Portuguesa + Napolitana
+192,95,produto,2,22.0,44.0,,,Batata Frita Grande,
+193,96,pizza,1,55.9,55.9,Integral,Chocolate,,Portuguesa
+194,96,pizza,1,51.9,51.9,Tradicional,Chocolate,,Pepperoni + Mussarela
+195,96,pizza,1,67.9,67.9,Grossa,Cheddar,,Costela BBQ
+196,96,produto,2,12.0,24.0,,,Coca-Cola 2L,
+197,97,pizza,1,56.4,56.4,Fina,Cheddar,,Costela BBQ + Napolitana
+198,98,pizza,1,58.9,58.9,Grossa,Sem borda,,Carne Seca + Quatro Queijos
+199,98,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+200,99,pizza,1,53.9,53.9,Integral,Cream Cheese,,Napolitana
+201,100,pizza,1,57.9,57.9,Grossa,Catupiry,,Nutella com Banana + Romeu e Julieta
+202,100,produto,1,12.0,12.0,,,Coca-Cola 2L,
+203,101,pizza,1,64.9,64.9,Grossa,Catupiry,,Costela BBQ + Nutella com Banana
+204,101,produto,1,12.0,12.0,,,Coca-Cola 2L,
+205,102,pizza,1,56.9,56.9,Integral,Sem borda,,Carne Seca + Frango com Catupiry
+206,102,pizza,1,55.23,55.23,Grossa,Sem borda,,Frango com Catupiry + Romeu e Julieta + Camarão
+207,102,produto,2,28.0,56.0,,,Frango Frito,
+208,103,pizza,1,67.9,67.9,Grossa,Cheddar,,Costela BBQ
+209,103,pizza,1,48.9,48.9,Fina,Catupiry,,Calabresa
+210,104,pizza,1,60.9,60.9,Tradicional,Chocolate,,Quatro Queijos
+211,105,pizza,1,53.4,53.4,Tradicional,Cheddar,,Margherita + Quatro Queijos
+212,105,produto,2,10.0,20.0,,,Guaraná Antarctica 2L,
+213,106,pizza,1,56.9,56.9,Integral,Catupiry,,Chocolate com Morango + Calabresa
+214,106,pizza,1,60.9,60.9,Fina,Chocolate,,Portuguesa + Camarão
+215,106,produto,1,22.0,22.0,,,Batata Frita Grande,
+216,107,pizza,1,58.9,58.9,Grossa,Catupiry,,Nutella com Banana + Prestígio
+217,107,pizza,1,73.9,73.9,Grossa,Cheddar,,Camarão
+218,107,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+219,108,pizza,1,51.9,51.9,Grossa,Chocolate,,Calabresa
+220,108,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+221,109,pizza,1,48.9,48.9,Tradicional,Chocolate,,Margherita + Napolitana + Prestígio
+222,109,produto,1,16.0,16.0,,,Brownie com Sorvete,
+223,110,pizza,1,59.9,59.9,Grossa,Catupiry,,Calabresa + Costela BBQ
+224,111,pizza,1,49.9,49.9,Integral,Sem borda,,Romeu e Julieta
+225,111,pizza,1,61.4,61.4,Grossa,Catupiry,,Camarão + Margherita
+226,111,pizza,1,54.9,54.9,Fina,Cheddar,,Chocolate com Morango
+227,111,produto,1,12.0,12.0,,,Coca-Cola 2L,
+228,112,pizza,1,68.9,68.9,Tradicional,Cream Cheese,,Camarão + Costela BBQ
+229,112,produto,1,22.0,22.0,,,Batata Frita Grande,
+230,113,pizza,1,56.9,56.9,Grossa,Cheddar,,Prestígio + Margherita + Carne Seca
+231,114,pizza,1,58.9,58.9,Fina,Catupiry,,Pepperoni
+232,115,pizza,1,52.9,52.9,Integral,Chocolate,,Mussarela + Portuguesa
+233,115,produto,1,16.0,16.0,,,Brownie com Sorvete,
+234,116,pizza,1,47.4,47.4,Fina,Cheddar,,Calabresa + Margherita
+235,117,pizza,1,55.9,55.9,Grossa,Chocolate,,Prestígio
+236,117,produto,2,16.0,32.0,,,Brownie com Sorvete,
+237,118,pizza,1,57.9,57.9,Integral,Cheddar,,Frango com Catupiry
+238,119,pizza,1,55.23,55.23,Grossa,Sem borda,,Prestígio + Pepperoni + Carne Seca
+239,120,pizza,1,48.9,48.9,Fina,Catupiry,,Calabresa
+240,120,pizza,1,58.57,58.57,Integral,Cheddar,,Calabresa + Prestígio + Nutella com Banana
+241,120,produto,2,12.0,24.0,,,Coca-Cola 2L,
+242,121,pizza,1,62.9,62.9,Integral,Cream Cheese,,Romeu e Julieta + Carne Seca
+243,121,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+244,122,pizza,1,56.23,56.23,Integral,Sem borda,,Carne Seca + Napolitana + Quatro Queijos
+245,122,produto,1,12.0,12.0,,,Coca-Cola 2L,
+246,123,pizza,1,50.57,50.57,Fina,Chocolate,,Romeu e Julieta + Chocolate com Morango + Margherita
+247,123,pizza,1,61.9,61.9,Integral,Cream Cheese,,Nutella com Banana + Quatro Queijos + Napolitana
+248,124,pizza,1,60.9,60.9,Grossa,Cream Cheese,,Prestígio + Nutella com Banana + Pepperoni
+249,124,pizza,1,47.4,47.4,Fina,Cheddar,,Calabresa + Margherita
+250,124,pizza,1,68.9,68.9,Integral,Cream Cheese,,Carne Seca
+251,124,produto,2,18.0,36.0,,,Petit Gateau,
+252,125,pizza,1,44.9,44.9,Tradicional,Sem borda,,Portuguesa
+253,125,pizza,1,64.9,64.9,Grossa,Catupiry,,Pepperoni + Costela BBQ
+254,125,produto,1,28.0,28.0,,,Frango Frito,
+255,126,pizza,1,74.9,74.9,Grossa,Cream Cheese,,Camarão
+256,126,pizza,1,71.9,71.9,Tradicional,Cream Cheese,,Camarão
+257,126,pizza,1,54.9,54.9,Tradicional,Cheddar,,Chocolate com Morango
+258,126,produto,2,18.0,36.0,,,Petit Gateau,
+259,127,pizza,1,52.9,52.9,Tradicional,Sem borda,,Pepperoni
+260,128,pizza,1,53.9,53.9,Fina,Cream Cheese,,Frango com Catupiry
+261,128,pizza,1,50.9,50.9,Tradicional,Catupiry,,Romeu e Julieta
+262,128,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+263,129,pizza,1,57.9,57.9,Integral,Catupiry,,Chocolate com Morango + Romeu e Julieta
+264,130,pizza,1,55.9,55.9,Integral,Catupiry,,Portuguesa
+265,130,pizza,1,50.9,50.9,Fina,Catupiry,,Calabresa + Frango com Catupiry
+266,131,pizza,1,58.9,58.9,Integral,Cream Cheese,,Frango com Catupiry
+267,132,pizza,1,59.57,59.57,Integral,Cream Cheese,,Pepperoni + Frango com Catupiry + Calabresa
+268,132,pizza,1,53.9,53.9,Grossa,Sem borda,,Romeu e Julieta + Carne Seca
+269,133,pizza,1,46.9,46.9,Fina,Sem borda,,Romeu e Julieta + Nutella com Banana + Calabresa
+270,133,pizza,1,55.4,55.4,Tradicional,Catupiry,,Carne Seca + Napolitana
+271,134,pizza,1,53.9,53.9,Tradicional,Catupiry,,Calabresa + Nutella com Banana
+272,134,pizza,1,54.9,54.9,Fina,Chocolate,,Romeu e Julieta + Quatro Queijos + Frango com Catupiry
+273,134,produto,1,22.0,22.0,,,Batata Frita Grande,
+274,135,pizza,1,59.9,59.9,Fina,Cream Cheese,,Pepperoni
+275,136,pizza,1,57.9,57.9,Integral,Cheddar,,Prestígio
+276,136,pizza,1,53.4,53.4,Grossa,Cheddar,,Prestígio + Napolitana
+277,137,pizza,1,52.9,52.9,Tradicional,Chocolate,,Prestígio
+278,137,produto,1,16.0,16.0,,,Brownie com Sorvete,
+279,138,pizza,1,59.9,59.9,Integral,Chocolate,,Costela BBQ + Mussarela
+280,138,produto,1,16.0,16.0,,,Brownie com Sorvete,
+281,139,pizza,1,53.23,53.23,Fina,Catupiry,,Prestígio + Napolitana + Pepperoni
+282,139,pizza,1,63.9,63.9,Fina,Chocolate,,Costela BBQ + Carne Seca
+283,139,pizza,1,66.9,66.9,Grossa,Cream Cheese,,Carne Seca
+284,140,pizza,1,58.9,58.9,Fina,Cream Cheese,,Romeu e Julieta + Costela BBQ
+285,140,pizza,1,58.9,58.9,Fina,Chocolate,,Nutella com Banana
+286,140,produto,2,12.0,24.0,,,Coca-Cola 2L,
+287,141,pizza,1,50.9,50.9,Integral,Sem borda,,Prestígio + Portuguesa
+288,142,pizza,1,49.4,49.4,Fina,Catupiry,,Napolitana + Romeu e Julieta
+289,142,pizza,1,53.9,53.9,Fina,Cream Cheese,,Prestígio
+290,142,produto,2,12.0,24.0,,,Coca-Cola 2L,
+291,143,pizza,1,63.9,63.9,Integral,Sem borda,,Camarão + Pepperoni
+292,143,produto,2,10.0,20.0,,,Guaraná Antarctica 2L,
+293,144,pizza,1,62.9,62.9,Tradicional,Cheddar,,Costela BBQ + Quatro Queijos
+294,144,produto,1,22.0,22.0,,,Batata Frita Grande,
+295,145,pizza,1,73.9,73.9,Grossa,Catupiry,,Camarão
+296,145,produto,2,6.0,12.0,,,Coca-Cola Lata 350ml,
+297,146,pizza,1,51.9,51.9,Grossa,Sem borda,,Chocolate com Morango
+298,146,pizza,1,69.9,69.9,Grossa,Chocolate,,Camarão + Carne Seca
+299,146,pizza,1,67.9,67.9,Grossa,Catupiry,,Costela BBQ
+300,147,pizza,1,55.9,55.9,Tradicional,Catupiry,,Calabresa + Carne Seca
+301,147,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+302,148,pizza,1,58.9,58.9,Integral,Cream Cheese,,Frango com Catupiry
+303,149,pizza,1,61.9,61.9,Integral,Cheddar,,Nutella com Banana + Carne Seca + Calabresa
+304,149,pizza,1,56.9,56.9,Tradicional,Cream Cheese,,Pepperoni + Frango com Catupiry
+305,149,pizza,1,52.9,52.9,Fina,Cheddar,,Prestígio
+306,149,produto,2,12.0,24.0,,,Coca-Cola 2L,
+307,150,pizza,1,47.9,47.9,Fina,Catupiry,,Napolitana
+308,150,pizza,1,58.9,58.9,Grossa,Catupiry,,Pepperoni + Frango com Catupiry
+309,150,pizza,1,64.9,64.9,Grossa,Cheddar,,Costela BBQ + Nutella com Banana
+310,150,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+311,151,pizza,1,55.9,55.9,Grossa,Cheddar,,Frango com Catupiry
+312,152,pizza,1,62.9,62.9,Grossa,Cheddar,,Carne Seca + Camarão + Margherita
+313,152,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+314,153,pizza,1,56.9,56.9,Integral,Catupiry,,Pepperoni + Napolitana + Calabresa
+315,154,pizza,1,47.23,47.23,Tradicional,Sem borda,,Prestígio + Pepperoni + Napolitana
+316,154,pizza,1,48.9,48.9,Integral,Sem borda,,Calabresa + Romeu e Julieta
+317,154,pizza,1,51.9,51.9,Integral,Sem borda,,Prestígio
+318,155,pizza,1,49.9,49.9,Fina,Cream Cheese,,Calabresa
+319,156,pizza,1,66.9,66.9,Tradicional,Cheddar,,Camarão + Carne Seca
+320,156,pizza,1,57.9,57.9,Grossa,Cheddar,,Chocolate com Morango
+321,156,produto,2,16.0,32.0,,,Brownie com Sorvete,
+322,157,pizza,1,53.9,53.9,Integral,Cream Cheese,,Napolitana
+323,157,pizza,1,60.9,60.9,Fina,Cheddar,,Portuguesa + Quatro Queijos + Camarão
+324,157,pizza,1,56.23,56.23,Fina,Chocolate,,Chocolate com Morango + Romeu e Julieta + Carne Seca
+325,158,pizza,1,55.9,55.9,Grossa,Chocolate,,Prestígio
+326,158,pizza,1,50.4,50.4,Grossa,Sem borda,,Margherita + Quatro Queijos
+327,158,produto,1,12.0,12.0,,,Coca-Cola 2L,
+328,159,pizza,1,67.9,67.9,Integral,Chocolate,,Carne Seca
+329,159,pizza,1,50.9,50.9,Fina,Sem borda,,Quatro Queijos + Romeu e Julieta + Nutella com Banana
+330,160,pizza,1,53.9,53.9,Grossa,Catupiry,,Portuguesa
+331,161,pizza,1,51.9,51.9,Tradicional,Cream Cheese,,Romeu e Julieta
+332,162,pizza,1,57.9,57.9,Grossa,Catupiry,,Quatro Queijos + Calabresa
+333,162,produto,1,4.0,4.0,,,Água Mineral 500ml,
+334,163,pizza,1,53.4,53.4,Integral,Sem borda,,Napolitana + Quatro Queijos
+335,163,pizza,1,54.9,54.9,Tradicional,Catupiry,,Chocolate com Morango
+336,163,produto,2,28.0,56.0,,,Frango Frito,
+337,164,pizza,1,55.9,55.9,Grossa,Catupiry,,Prestígio
+338,164,pizza,1,51.4,51.4,Grossa,Catupiry,,Portuguesa + Margherita
+339,164,produto,1,18.0,18.0,,,Petit Gateau,
+340,165,pizza,1,62.9,62.9,Grossa,Catupiry,,Costela BBQ + Chocolate com Morango
+341,166,pizza,1,44.9,44.9,Fina,Cheddar,,Mussarela
+342,166,produto,2,16.0,32.0,,,Brownie com Sorvete,
+343,167,pizza,1,57.9,57.9,Fina,Cream Cheese,,Carne Seca + Romeu e Julieta
+344,168,pizza,1,63.9,63.9,Integral,Catupiry,,Nutella com Banana
+345,168,pizza,1,55.9,55.9,Fina,Chocolate,,Carne Seca + Calabresa
+346,168,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+347,169,pizza,1,57.4,57.4,Grossa,Cream Cheese,,Nutella com Banana + Napolitana
+348,169,pizza,1,47.9,47.9,Grossa,Cheddar,,Mussarela
+349,170,pizza,1,69.9,69.9,Integral,Chocolate,,Costela BBQ
+350,170,pizza,1,53.9,53.9,Tradicional,Cream Cheese,,Portuguesa + Carne Seca + Mussarela
+351,170,produto,2,6.0,12.0,,,Coca-Cola Lata 350ml,
+352,171,pizza,1,49.9,49.9,Integral,Cheddar,,Mussarela
+353,171,pizza,1,55.9,55.9,Fina,Cheddar,,Carne Seca + Calabresa
+354,171,produto,1,28.0,28.0,,,Frango Frito,
+355,172,pizza,1,46.9,46.9,Fina,Chocolate,,Mussarela + Calabresa
+356,172,pizza,1,58.9,58.9,Fina,Sem borda,,Costela BBQ
+357,172,pizza,1,60.9,60.9,Integral,Chocolate,,Napolitana + Quatro Queijos + Pepperoni
+358,173,pizza,1,50.9,50.9,Tradicional,Chocolate,,Romeu e Julieta
+359,173,pizza,1,56.9,56.9,Integral,Chocolate,,Prestígio + Romeu e Julieta
+360,173,produto,2,22.0,44.0,,,Batata Frita Grande,
+361,174,pizza,1,55.9,55.9,Integral,Cheddar,,Portuguesa
+362,175,pizza,1,59.23,59.23,Fina,Cream Cheese,,Mussarela + Pepperoni + Camarão
+363,175,pizza,1,57.9,57.9,Integral,Cheddar,,Prestígio
+364,175,produto,2,10.0,20.0,,,Guaraná Antarctica 2L,
+365,176,pizza,1,57.9,57.9,Grossa,Cheddar,,Portuguesa + Pepperoni
+366,177,pizza,1,59.9,59.9,Grossa,Chocolate,,Pepperoni + Nutella com Banana + Prestígio
+367,177,pizza,1,53.9,53.9,Grossa,Sem borda,,Chocolate com Morango + Nutella com Banana
+368,178,pizza,1,57.4,57.4,Grossa,Chocolate,,Napolitana + Quatro Queijos
+369,178,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+370,179,pizza,1,55.9,55.9,Fina,Cream Cheese,,Chocolate com Morango
+371,179,produto,2,10.0,20.0,,,Guaraná Antarctica 2L,
+372,180,pizza,1,64.9,64.9,Fina,Cheddar,,Costela BBQ
+373,180,pizza,1,63.57,63.57,Fina,Catupiry,,Pepperoni + Camarão + Quatro Queijos
+374,180,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+375,181,pizza,1,70.9,70.9,Fina,Chocolate,,Camarão
+376,182,pizza,1,53.9,53.9,Tradicional,Catupiry,,Chocolate com Morango + Prestígio
+377,183,pizza,1,57.57,57.57,Tradicional,Chocolate,,Romeu e Julieta + Carne Seca + Nutella com Banana
+378,184,pizza,1,65.9,65.9,Tradicional,Cream Cheese,,Costela BBQ
+379,185,pizza,1,54.9,54.9,Tradicional,Catupiry,,Portuguesa + Pepperoni
+380,185,produto,2,4.0,8.0,,,Água Mineral 500ml,
+381,186,pizza,1,49.9,49.9,Tradicional,Cheddar,,Calabresa + Romeu e Julieta
+382,186,pizza,1,58.9,58.9,Integral,Cream Cheese,,Prestígio
+383,187,pizza,1,52.9,52.9,Fina,Chocolate,,Prestígio
+384,188,pizza,1,54.9,54.9,Tradicional,Sem borda,,Quatro Queijos
+385,188,produto,1,18.0,18.0,,,Petit Gateau,
+386,189,pizza,1,59.9,59.9,Grossa,Cheddar,,Portuguesa + Quatro Queijos + Pepperoni
+387,189,pizza,1,56.4,56.4,Grossa,Chocolate,,Napolitana + Nutella com Banana
+388,189,pizza,1,58.9,58.9,Integral,Cream Cheese,,Prestígio
+389,190,pizza,1,69.9,69.9,Integral,Cream Cheese,,Costela BBQ + Carne Seca
+390,190,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+391,191,pizza,1,44.9,44.9,Tradicional,Catupiry,,Mussarela
+392,191,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+393,192,pizza,1,48.9,48.9,Tradicional,Chocolate,,Calabresa
+394,192,produto,1,22.0,22.0,,,Batata Frita Grande,
+395,193,pizza,1,56.9,56.9,Grossa,Chocolate,,Margherita + Romeu e Julieta + Costela BBQ
+396,193,pizza,1,52.23,52.23,Tradicional,Sem borda,,Pepperoni + Prestígio + Carne Seca
+397,194,pizza,1,60.9,60.9,Tradicional,Cheddar,,Quatro Queijos
+398,194,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+399,195,pizza,1,46.9,46.9,Fina,Cream Cheese,,Margherita
+400,196,pizza,1,54.57,54.57,Grossa,Chocolate,,Portuguesa + Romeu e Julieta + Frango com Catupiry
+401,196,pizza,1,53.9,53.9,Tradicional,Cheddar,,Frango com Catupiry + Chocolate com Morango
+402,197,pizza,1,57.4,57.4,Grossa,Cream Cheese,,Pepperoni + Napolitana
+403,197,produto,1,12.0,12.0,,,Coca-Cola 2L,
+404,198,pizza,1,56.9,56.9,Integral,Catupiry,,Pepperoni + Mussarela
+405,199,pizza,1,49.9,49.9,Tradicional,Cream Cheese,,Frango com Catupiry + Mussarela
+406,199,produto,2,12.0,24.0,,,Coca-Cola 2L,
+407,200,pizza,1,44.9,44.9,Grossa,Sem borda,,Mussarela + Portuguesa
+408,200,produto,2,18.0,36.0,,,Petit Gateau,
+409,201,pizza,1,45.9,45.9,Tradicional,Cheddar,,Margherita
+410,201,pizza,1,63.9,63.9,Integral,Cheddar,,Carne Seca + Chocolate com Morango
+411,201,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+412,202,pizza,1,60.23,60.23,Grossa,Cheddar,,Camarão + Prestígio + Napolitana
+413,202,pizza,1,62.9,62.9,Integral,Sem borda,,Costela BBQ + Carne Seca
+414,203,pizza,1,44.9,44.9,Fina,Chocolate,,Mussarela
+415,203,produto,1,16.0,16.0,,,Brownie com Sorvete,
+416,204,pizza,1,49.9,49.9,Fina,Sem borda,,Romeu e Julieta + Quatro Queijos
+417,205,pizza,1,72.9,72.9,Integral,Chocolate,,Camarão + Costela BBQ
+418,206,pizza,1,53.9,53.9,Grossa,Chocolate,,Portuguesa
+419,206,pizza,1,53.57,53.57,Integral,Sem borda,,Carne Seca + Napolitana + Prestígio
+420,206,produto,2,16.0,32.0,,,Brownie com Sorvete,
+421,207,pizza,1,50.9,50.9,Fina,Chocolate,,Romeu e Julieta
+422,207,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+423,208,pizza,1,57.9,57.9,Integral,Chocolate,,Frango com Catupiry
+424,208,produto,1,16.0,16.0,,,Brownie com Sorvete,
+425,209,pizza,1,47.23,47.23,Tradicional,Sem borda,,Napolitana + Romeu e Julieta + Quatro Queijos
+426,209,pizza,1,57.9,57.9,Grossa,Catupiry,,Mussarela + Chocolate com Morango + Costela BBQ
+427,210,pizza,1,52.9,52.9,Integral,Cream Cheese,,Calabresa + Mussarela
+428,210,pizza,1,54.9,54.9,Grossa,Cream Cheese,,Portuguesa + Romeu e Julieta
+429,210,pizza,1,50.4,50.4,Tradicional,Catupiry,,Chocolate com Morango + Margherita
+430,211,pizza,1,65.9,65.9,Tradicional,Cream Cheese,,Costela BBQ
+431,211,pizza,1,47.9,47.9,Grossa,Catupiry,,Mussarela
+432,211,produto,2,12.0,24.0,,,Coca-Cola 2L,
+433,212,pizza,1,51.57,51.57,Fina,Chocolate,,Romeu e Julieta + Portuguesa + Frango com Catupiry
+434,212,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+435,213,pizza,1,53.9,53.9,Fina,Cream Cheese,,Frango com Catupiry
+436,213,pizza,1,64.9,64.9,Integral,Cream Cheese,,Pepperoni
+437,214,pizza,1,58.9,58.9,Tradicional,Cheddar,,Pepperoni
+438,214,pizza,1,56.9,56.9,Fina,Sem borda,,Carne Seca
+439,214,produto,1,22.0,22.0,,,Batata Frita Grande,
+440,215,pizza,1,66.9,66.9,Grossa,Catupiry,,Carne Seca + Costela BBQ
+441,216,pizza,1,59.9,59.9,Integral,Cheddar,,Chocolate com Morango
+442,216,pizza,1,61.23,61.23,Grossa,Catupiry,,Nutella com Banana + Portuguesa + Costela BBQ
+443,217,pizza,1,55.9,55.9,Grossa,Cream Cheese,,Romeu e Julieta + Prestígio
+444,217,pizza,1,49.9,49.9,Fina,Cheddar,,Calabresa + Portuguesa
+445,217,pizza,1,57.9,57.9,Grossa,Sem borda,,Camarão + Romeu e Julieta
+446,217,produto,1,4.0,4.0,,,Água Mineral 500ml,
+447,218,pizza,1,49.4,49.4,Fina,Catupiry,,Margherita + Frango com Catupiry
+448,219,pizza,1,51.9,51.9,Grossa,Sem borda,,Chocolate com Morango
+449,220,pizza,1,60.9,60.9,Fina,Chocolate,,Quatro Queijos
+450,221,pizza,1,52.9,52.9,Tradicional,Cheddar,,Romeu e Julieta + Chocolate com Morango
+451,222,pizza,1,57.9,57.9,Grossa,Catupiry,,Chocolate com Morango
+452,222,pizza,1,53.9,53.9,Integral,Sem borda,,Chocolate com Morango
+453,222,produto,1,28.0,28.0,,,Frango Frito,
+454,223,pizza,1,54.9,54.9,Fina,Catupiry,,Chocolate com Morango
+455,223,pizza,1,55.9,55.9,Integral,Cream Cheese,,Calabresa + Portuguesa
+456,224,pizza,1,62.9,62.9,Fina,Chocolate,,Frango com Catupiry + Camarão + Costela BBQ
+457,224,pizza,1,44.9,44.9,Integral,Sem borda,,Margherita
+458,225,pizza,1,49.4,49.4,Fina,Catupiry,,Napolitana + Romeu e Julieta
+459,225,pizza,1,60.9,60.9,Grossa,Catupiry,,Prestígio + Carne Seca
+460,225,produto,1,22.0,22.0,,,Batata Frita Grande,
+461,226,pizza,1,50.4,50.4,Fina,Catupiry,,Napolitana + Frango com Catupiry
+462,226,pizza,1,60.9,60.9,Tradicional,Cheddar,,Pepperoni + Carne Seca
+463,226,pizza,1,60.57,60.57,Integral,Cheddar,,Romeu e Julieta + Camarão + Mussarela
+464,227,pizza,1,62.9,62.9,Fina,Catupiry,,Carne Seca
+465,227,pizza,1,41.9,41.9,Tradicional,Sem borda,,Napolitana
+466,227,produto,2,12.0,24.0,,,Coca-Cola 2L,
+467,228,pizza,1,58.9,58.9,Integral,Catupiry,,Margherita + Prestígio + Carne Seca
+468,228,pizza,1,56.4,56.4,Fina,Cream Cheese,,Napolitana + Carne Seca
+469,229,pizza,1,50.9,50.9,Fina,Sem borda,,Frango com Catupiry + Quatro Queijos
+470,229,pizza,1,53.23,53.23,Tradicional,Cheddar,,Napolitana + Pepperoni + Frango com Catupiry
+471,229,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+472,230,pizza,1,50.9,50.9,Tradicional,Cheddar,,Calabresa + Prestígio
+473,231,pizza,1,41.4,41.4,Tradicional,Sem borda,,Margherita + Calabresa
+474,231,pizza,1,52.9,52.9,Fina,Sem borda,,Frango com Catupiry + Costela BBQ
+475,232,pizza,1,55.4,55.4,Tradicional,Chocolate,,Carne Seca + Napolitana
+476,232,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+477,233,pizza,1,53.9,53.9,Integral,Cream Cheese,,Napolitana
+478,233,pizza,1,55.9,55.9,Integral,Chocolate,,Romeu e Julieta
+479,234,pizza,1,50.9,50.9,Tradicional,Catupiry,,Romeu e Julieta
+480,234,pizza,1,41.4,41.4,Tradicional,Sem borda,,Margherita + Calabresa
+481,234,produto,1,18.0,18.0,,,Petit Gateau,
+482,235,pizza,1,56.9,56.9,Integral,Cream Cheese,,Portuguesa
+483,235,pizza,1,49.9,49.9,Integral,Catupiry,,Mussarela
+484,236,pizza,1,60.9,60.9,Tradicional,Cheddar,,Quatro Queijos
+485,236,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+486,237,pizza,1,51.9,51.9,Fina,Catupiry,,Pepperoni + Mussarela
+487,237,produto,1,18.0,18.0,,,Petit Gateau,
+488,238,pizza,1,44.4,44.4,Fina,Sem borda,,Prestígio + Napolitana
+489,238,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+490,239,pizza,1,52.9,52.9,Tradicional,Catupiry,,Prestígio
+491,239,pizza,1,67.9,67.9,Grossa,Cheddar,,Costela BBQ
+492,239,produto,1,22.0,22.0,,,Batata Frita Grande,
+493,240,pizza,1,57.9,57.9,Grossa,Sem borda,,Quatro Queijos
+494,240,pizza,1,50.9,50.9,Fina,Cream Cheese,,Chocolate com Morango + Mussarela
+495,241,pizza,1,57.23,57.23,Grossa,Chocolate,,Nutella com Banana + Romeu e Julieta + Frango com Catupiry
+496,241,pizza,1,55.9,55.9,Integral,Chocolate,,Romeu e Julieta
+497,242,pizza,1,58.9,58.9,Tradicional,Catupiry,,Nutella com Banana
+498,242,pizza,1,55.9,55.9,Fina,Cream Cheese,,Chocolate com Morango
+499,242,pizza,1,65.9,65.9,Fina,Cream Cheese,,Costela BBQ
+500,242,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+501,243,pizza,1,60.9,60.9,Fina,Catupiry,,Romeu e Julieta + Camarão
+502,243,pizza,1,53.9,53.9,Grossa,Cheddar,,Portuguesa
+503,243,produto,1,4.0,4.0,,,Água Mineral 500ml,
+504,244,pizza,1,53.4,53.4,Grossa,Chocolate,,Prestígio + Napolitana
+505,244,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+506,245,pizza,1,55.57,55.57,Grossa,Chocolate,,Margherita + Frango com Catupiry + Nutella com Banana
+507,245,produto,2,18.0,36.0,,,Petit Gateau,
+508,246,pizza,1,59.9,59.9,Fina,Cream Cheese,,Nutella com Banana
+509,246,pizza,1,61.4,61.4,Integral,Cream Cheese,,Carne Seca + Napolitana
+510,247,pizza,1,51.9,51.9,Integral,Cream Cheese,,Margherita
+511,247,produto,1,6.0,6.0,,,Coca-Cola Lata 350ml,
+512,248,pizza,1,54.9,54.9,Grossa,Catupiry,,Frango com Catupiry + Romeu e Julieta
+513,248,pizza,1,56.9,56.9,Integral,Catupiry,,Romeu e Julieta + Frango com Catupiry
+514,249,pizza,1,58.9,58.9,Tradicional,Cheddar,,Mussarela + Camarão + Quatro Queijos
+515,249,produto,1,22.0,22.0,,,Batata Frita Grande,
+516,250,pizza,1,45.9,45.9,Fina,Sem borda,,Frango com Catupiry + Portuguesa
+517,251,pizza,1,54.4,54.4,Integral,Catupiry,,Romeu e Julieta + Napolitana
+518,251,pizza,1,58.9,58.9,Tradicional,Cream Cheese,,Costela BBQ + Romeu e Julieta
+519,251,produto,2,28.0,56.0,,,Frango Frito,
+520,252,pizza,1,64.9,64.9,Tradicional,Cheddar,,Costela BBQ
+521,252,produto,1,4.0,4.0,,,Água Mineral 500ml,
+522,253,pizza,1,41.9,41.9,Fina,Sem borda,,Napolitana
+523,253,pizza,1,58.9,58.9,Fina,Catupiry,,Nutella com Banana
+524,254,pizza,1,42.9,42.9,Grossa,Sem borda,,Margherita
+525,255,pizza,1,61.9,61.9,Grossa,Sem borda,,Costela BBQ
+526,255,pizza,1,48.57,48.57,Grossa,Sem borda,,Nutella com Banana + Mussarela + Romeu e Julieta
+527,255,produto,1,10.0,10.0,,,Guaraná Antarctica 2L,
+528,256,pizza,1,61.9,61.9,Grossa,Cheddar,,Pepperoni
+529,256,pizza,1,44.9,44.9,Tradicional,Sem borda,,Romeu e Julieta
+530,256,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+531,257,pizza,1,59.9,59.9,Grossa,Cheddar,,Calabresa + Costela BBQ
+532,257,pizza,1,47.9,47.9,Fina,Sem borda,,Carne Seca + Mussarela
+533,257,produto,2,28.0,56.0,,,Frango Frito,
+534,258,pizza,1,69.9,69.9,Integral,Cheddar,,Costela BBQ
+535,259,pizza,1,60.9,60.9,Tradicional,Chocolate,,Camarão + Romeu e Julieta
+536,259,produto,2,4.0,8.0,,,Água Mineral 500ml,
+537,260,pizza,1,60.4,60.4,Integral,Cream Cheese,,Quatro Queijos + Napolitana
+538,260,produto,1,4.0,4.0,,,Água Mineral 500ml,
+539,261,pizza,1,60.23,60.23,Tradicional,Chocolate,,Camarão + Portuguesa + Nutella com Banana
+540,262,pizza,1,63.9,63.9,Grossa,Chocolate,,Quatro Queijos
+541,263,pizza,1,61.9,61.9,Grossa,Chocolate,,Nutella com Banana
+542,264,pizza,1,58.4,58.4,Integral,Cream Cheese,,Margherita + Pepperoni
+543,264,produto,2,10.0,20.0,,,Guaraná Antarctica 2L,
+544,265,pizza,1,70.9,70.9,Grossa,Cream Cheese,,Camarão + Carne Seca
+545,266,pizza,1,58.9,58.9,Fina,Sem borda,,Costela BBQ
+546,267,pizza,1,57.9,57.9,Tradicional,Cream Cheese,,Quatro Queijos + Frango com Catupiry
+547,267,produto,1,18.0,18.0,,,Petit Gateau,
+548,268,pizza,1,51.9,51.9,Grossa,Cheddar,,Calabresa
+549,268,produto,1,9.0,9.0,,,Suco de Laranja 500ml,
+550,269,pizza,1,46.9,46.9,Fina,Cream Cheese,,Margherita
+551,269,pizza,1,70.9,70.9,Integral,Chocolate,,Quatro Queijos + Camarão
+552,269,produto,1,18.0,18.0,,,Petit Gateau,
+553,270,pizza,1,58.9,58.9,Fina,Cheddar,,Pepperoni
+554,270,pizza,1,60.9,60.9,Grossa,Cream Cheese,,Chocolate com Morango + Carne Seca + Frango com Catupiry
+555,270,produto,2,10.0,20.0,,,Guaraná Antarctica 2L,
+556,271,pizza,1,53.9,53.9,Grossa,Chocolate,,Romeu e Julieta
+557,271,produto,2,22.0,44.0,,,Batata Frita Grande,
+558,272,pizza,1,58.9,58.9,Grossa,Cream Cheese,,Romeu e Julieta + Pepperoni
+559,272,pizza,1,48.4,48.4,Tradicional,Catupiry,,Romeu e Julieta + Margherita
+560,272,pizza,1,48.9,48.9,Grossa,Chocolate,,Margherita
+561,272,produto,1,4.0,4.0,,,Água Mineral 500ml,
+562,273,pizza,1,48.9,48.9,Fina,Sem borda,,Chocolate com Morango
+563,274,pizza,1,73.9,73.9,Grossa,Catupiry,,Camarão
+564,274,pizza,1,58.9,58.9,Tradicional,Cheddar,,Pepperoni
+565,274,pizza,1,63.57,63.57,Tradicional,Catupiry,,Camarão + Nutella com Banana + Quatro Queijos
+566,274,produto,1,16.0,16.0,,,Brownie com Sorvete,
+567,275,pizza,1,59.23,59.23,Fina,Cream Cheese,,Frango com Catupiry + Pepperoni + Carne Seca
+568,275,pizza,1,50.9,50.9,Integral,Chocolate,,Margherita
+569,275,produto,2,9.0,18.0,,,Suco de Laranja 500ml,
+570,276,pizza,1,65.9,65.9,Tradicional,Cream Cheese,,Camarão + Pepperoni
+571,277,pizza,1,47.9,47.9,Tradicional,Cheddar,,Napolitana
+572,277,pizza,1,49.9,49.9,Grossa,Sem borda,,Frango com Catupiry
+573,278,pizza,1,62.9,62.9,Tradicional,Cheddar,,Carne Seca
+574,278,produto,1,22.0,22.0,,,Batata Frita Grande,
+575,279,pizza,1,54.9,54.9,Fina,Cheddar,,Chocolate com Morango
+576,279,produto,2,22.0,44.0,,,Batata Frita Grande,
+577,280,pizza,1,56.9,56.9,Integral,Cream Cheese,,Portuguesa

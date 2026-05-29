@@ -1,0 +1,156 @@
+﻿id,pedido_id,cliente_id,nota,comentario,created_at,categoria_nps
+1,2,32,4,"Gostei bastante, recomendo.",2026-01-03 16:15:01,Promotor
+2,7,35,1,"Péssimo atendimento, pizza veio errada.",2026-04-20 19:51:52,Detrator
+3,8,16,4,"Pizza ótima, entrega rápida.",2026-04-10 19:11:48,Promotor
+4,12,49,5,,2025-12-31 21:01:42,Promotor
+5,13,52,1,"Péssimo atendimento, pizza veio errada.",2025-12-29 19:05:14,Detrator
+6,14,54,4,Muito boa! Só demorou um pouquinho a mais.,2026-05-07 21:02:48,Promotor
+7,15,11,5,,2026-01-24 19:18:18,Promotor
+8,16,32,3,"Estava ok, mas a borda veio menos quente.",2026-03-22 19:37:13,Neutro
+9,20,10,3,"Mediana, esperava um pouco mais.",2025-12-06 19:57:21,Neutro
+10,22,10,4,,2026-01-05 20:30:29,Promotor
+11,24,15,5,Voltarei com certeza. Recomendo demais!,2026-03-25 14:00:43,Promotor
+12,27,7,4,"Pizza ótima, entrega rápida.",2026-01-06 22:30:24,Promotor
+13,30,38,4,Muito boa! Só demorou um pouquinho a mais.,2026-01-23 02:29:03,Promotor
+14,32,8,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-05-06 21:31:49,Promotor
+15,33,7,4,"Gostei bastante, recomendo.",2026-04-15 22:41:08,Promotor
+16,34,28,5,Melhor pizza de Niterói!,2026-05-04 21:01:52,Promotor
+17,35,30,5,,2026-01-26 11:34:46,Promotor
+18,38,11,5,,2026-04-26 23:59:53,Promotor
+19,41,5,5,Melhor pizza de Niterói!,2026-03-26 23:43:05,Promotor
+20,43,22,5,,2025-12-07 20:39:58,Promotor
+21,45,57,5,Melhor pizza de Niterói!,2026-04-19 21:39:24,Promotor
+22,47,15,5,"Perfeito, amei cada detalhe.",2026-04-29 19:30:59,Promotor
+23,48,19,3,"Estava ok, mas a borda veio menos quente.",2026-05-18 23:28:53,Neutro
+24,51,48,4,,2026-04-17 18:10:22,Promotor
+25,53,34,4,Muito boa! Só demorou um pouquinho a mais.,2026-01-12 22:49:27,Promotor
+26,54,43,5,,2026-03-25 18:24:51,Promotor
+27,55,34,3,"Mediana, esperava um pouco mais.",2026-01-31 19:11:17,Neutro
+28,56,12,3,"Estava ok, mas a borda veio menos quente.",2026-05-15 22:11:51,Neutro
+29,59,55,4,,2025-12-06 15:19:35,Promotor
+30,61,56,5,"Perfeito, amei cada detalhe.",2026-01-28 00:56:48,Promotor
+31,62,21,5,Melhor pizza de Niterói!,2026-03-13 21:58:48,Promotor
+32,67,59,4,"Gostei bastante, recomendo.",2026-02-21 23:34:46,Promotor
+33,69,17,5,"Perfeito, amei cada detalhe.",2026-04-15 19:27:52,Promotor
+34,73,20,4,"Gostei bastante, recomendo.",2026-03-14 21:33:16,Promotor
+35,74,10,3,Razoável.,2026-02-17 22:47:23,Neutro
+36,75,34,4,Muito boa! Só demorou um pouquinho a mais.,2026-02-15 11:18:45,Promotor
+37,77,29,4,"Gostei bastante, recomendo.",2026-05-09 23:35:24,Promotor
+38,78,13,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-05-10 21:06:02,Promotor
+39,79,33,5,Voltarei com certeza. Recomendo demais!,2026-01-16 15:51:46,Promotor
+40,80,46,5,Excelente! Pizza chegou quentinha e deliciosa!,2025-12-19 23:10:03,Promotor
+41,81,52,4,"Pizza ótima, entrega rápida.",2026-04-18 21:31:35,Promotor
+42,86,6,4,Muito boa! Só demorou um pouquinho a mais.,2026-02-08 18:31:30,Promotor
+43,87,60,2,"Não gostei muito, esperava mais qualidade.",2026-05-05 16:11:37,Detrator
+44,88,7,4,Muito boa! Só demorou um pouquinho a mais.,2026-02-14 14:03:21,Promotor
+45,89,18,4,Muito boa! Só demorou um pouquinho a mais.,2025-12-21 19:00:40,Promotor
+46,90,23,5,Voltarei com certeza. Recomendo demais!,2026-03-09 09:47:50,Promotor
+47,91,16,4,"Gostei bastante, recomendo.",2026-04-10 21:00:39,Promotor
+48,92,21,5,Melhor pizza de Niterói!,2025-12-27 00:13:18,Promotor
+49,93,19,5,Melhor pizza de Niterói!,2026-05-01 22:29:54,Promotor
+50,94,3,5,Melhor pizza de Niterói!,2026-04-25 01:13:57,Promotor
+51,95,26,3,,2026-02-19 21:55:44,Neutro
+52,96,5,4,Muito boa! Só demorou um pouquinho a mais.,2026-01-18 05:37:07,Promotor
+53,97,14,4,,2025-12-31 16:19:51,Promotor
+54,100,13,4,,2026-04-28 19:22:32,Promotor
+55,102,29,5,Melhor pizza de Niterói!,2026-05-09 00:53:51,Promotor
+56,103,18,5,Voltarei com certeza. Recomendo demais!,2026-05-08 21:44:55,Promotor
+57,104,60,4,"Gostei bastante, recomendo.",2026-05-10 19:20:20,Promotor
+58,107,56,3,,2026-02-11 21:54:04,Neutro
+59,108,44,5,"Perfeito, amei cada detalhe.",2026-02-15 22:54:57,Promotor
+60,110,50,4,"Gostei bastante, recomendo.",2025-12-05 03:04:00,Promotor
+61,111,10,5,Voltarei com certeza. Recomendo demais!,2026-03-05 17:57:40,Promotor
+62,112,24,4,Muito boa! Só demorou um pouquinho a mais.,2025-12-16 22:20:17,Promotor
+63,113,44,4,"Gostei bastante, recomendo.",2026-04-10 10:59:32,Promotor
+64,114,59,3,,2026-04-10 16:37:04,Neutro
+65,115,24,5,Excelente! Pizza chegou quentinha e deliciosa!,2025-12-30 17:17:19,Promotor
+66,117,24,4,Muito boa! Só demorou um pouquinho a mais.,2026-02-19 00:11:37,Promotor
+67,118,9,5,,2026-04-21 21:17:09,Promotor
+68,119,14,5,"Perfeito, amei cada detalhe.",2026-05-02 22:27:05,Promotor
+69,120,1,5,Melhor pizza de Niterói!,2025-12-03 22:31:08,Promotor
+70,124,12,5,Voltarei com certeza. Recomendo demais!,2025-12-25 14:28:51,Promotor
+71,128,32,5,,2026-05-11 19:01:24,Promotor
+72,129,46,3,,2025-11-27 19:07:10,Neutro
+73,131,17,3,Razoável.,2025-12-09 21:15:11,Neutro
+74,132,35,3,,2026-02-10 01:15:14,Neutro
+75,134,1,4,,2026-04-23 21:35:33,Promotor
+76,136,15,4,,2025-12-17 17:09:28,Promotor
+77,137,50,5,Melhor pizza de Niterói!,2026-05-05 19:36:01,Promotor
+78,140,36,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-03-27 20:56:19,Promotor
+79,141,32,3,"Estava ok, mas a borda veio menos quente.",2026-01-17 16:07:25,Neutro
+80,145,1,5,,2026-05-13 18:18:33,Promotor
+81,147,41,4,Muito boa! Só demorou um pouquinho a mais.,2026-01-10 22:22:03,Promotor
+82,148,34,4,"Gostei bastante, recomendo.",2026-01-12 20:37:08,Promotor
+83,149,36,4,Muito boa! Só demorou um pouquinho a mais.,2026-02-25 23:31:59,Promotor
+84,150,55,5,Melhor pizza de Niterói!,2026-04-17 22:52:54,Promotor
+85,152,43,3,,2026-05-10 18:06:44,Neutro
+86,153,16,4,Muito boa! Só demorou um pouquinho a mais.,2026-01-25 01:00:32,Promotor
+87,156,30,5,"Perfeito, amei cada detalhe.",2026-04-30 22:43:21,Promotor
+88,157,38,5,"Perfeito, amei cada detalhe.",2025-12-25 22:01:06,Promotor
+89,158,42,4,"Pizza ótima, entrega rápida.",2025-12-26 20:00:40,Promotor
+90,159,54,1,Chegou fria e muito atrasada.,2025-12-03 21:45:13,Detrator
+91,162,32,5,,2026-04-23 21:15:04,Promotor
+92,163,31,4,"Gostei bastante, recomendo.",2026-03-10 23:05:00,Promotor
+93,165,36,5,Excelente! Pizza chegou quentinha e deliciosa!,2025-12-05 20:54:58,Promotor
+94,168,48,4,"Gostei bastante, recomendo.",2026-04-14 23:54:13,Promotor
+95,172,40,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-04-03 13:24:08,Promotor
+96,173,34,4,"Pizza ótima, entrega rápida.",2026-03-24 23:18:47,Promotor
+97,174,10,3,"Estava ok, mas a borda veio menos quente.",2025-12-27 12:05:45,Neutro
+98,175,41,5,"Perfeito, amei cada detalhe.",2026-03-01 05:25:09,Promotor
+99,177,35,4,"Gostei bastante, recomendo.",2026-02-27 22:06:30,Promotor
+100,178,6,5,,2026-01-15 20:53:26,Promotor
+101,181,60,5,Voltarei com certeza. Recomendo demais!,2026-02-07 20:51:18,Promotor
+102,182,42,5,"Perfeito, amei cada detalhe.",2025-11-22 00:50:17,Promotor
+103,186,44,4,"Pizza ótima, entrega rápida.",2026-05-17 14:13:12,Promotor
+104,187,12,4,Muito boa! Só demorou um pouquinho a mais.,2026-04-18 23:14:25,Promotor
+105,188,44,5,,2026-01-01 18:53:20,Promotor
+106,189,15,2,"Não gostei muito, esperava mais qualidade.",2026-04-28 09:49:51,Detrator
+107,190,54,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-03-23 10:13:21,Promotor
+108,191,40,5,Voltarei com certeza. Recomendo demais!,2026-01-16 20:12:55,Promotor
+109,192,38,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-03-03 00:47:10,Promotor
+110,193,40,5,,2025-12-21 09:21:56,Promotor
+111,195,49,4,,2026-05-05 11:20:30,Promotor
+112,196,25,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-01-03 15:49:40,Promotor
+113,199,7,5,Voltarei com certeza. Recomendo demais!,2026-03-02 20:10:30,Promotor
+114,200,11,2,Demorou muito e a pizza veio morna.,2026-04-24 15:48:25,Detrator
+115,201,35,5,,2026-04-24 10:46:14,Promotor
+116,204,17,5,,2025-12-01 18:05:45,Promotor
+117,206,36,5,Melhor pizza de Niterói!,2026-02-10 23:04:40,Promotor
+118,207,36,5,Voltarei com certeza. Recomendo demais!,2026-05-20 22:05:28,Promotor
+119,208,33,4,,2026-03-09 20:47:09,Promotor
+120,209,32,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-04-30 23:52:36,Promotor
+121,210,34,4,"Gostei bastante, recomendo.",2025-11-29 17:10:09,Promotor
+122,211,9,5,Melhor pizza de Niterói!,2026-02-22 21:05:25,Promotor
+123,212,10,5,"Perfeito, amei cada detalhe.",2026-02-15 05:16:14,Promotor
+124,213,35,5,Voltarei com certeza. Recomendo demais!,2026-03-03 22:22:30,Promotor
+125,214,7,4,"Pizza ótima, entrega rápida.",2025-11-25 17:26:41,Promotor
+126,217,21,2,"Não gostei muito, esperava mais qualidade.",2025-12-04 20:58:07,Detrator
+127,218,33,4,"Gostei bastante, recomendo.",2026-05-04 21:03:41,Promotor
+128,219,12,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-02-14 23:09:44,Promotor
+129,223,25,5,Melhor pizza de Niterói!,2025-11-30 22:44:21,Promotor
+130,224,52,5,Voltarei com certeza. Recomendo demais!,2025-11-22 21:04:15,Promotor
+131,225,59,5,,2025-12-08 05:56:11,Promotor
+132,226,45,1,"Péssimo atendimento, pizza veio errada.",2026-01-01 21:10:36,Detrator
+133,228,31,5,Voltarei com certeza. Recomendo demais!,2026-05-18 19:28:41,Promotor
+134,229,10,4,Muito boa! Só demorou um pouquinho a mais.,2026-01-14 22:46:24,Promotor
+135,232,13,4,,2026-01-16 15:14:49,Promotor
+136,233,9,5,Melhor pizza de Niterói!,2025-11-27 19:42:03,Promotor
+137,234,30,4,"Gostei bastante, recomendo.",2026-01-20 22:09:49,Promotor
+138,237,21,5,Melhor pizza de Niterói!,2026-02-25 20:52:05,Promotor
+139,239,26,3,,2026-03-22 17:20:25,Neutro
+140,241,37,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-01-31 03:49:36,Promotor
+141,242,41,5,Excelente! Pizza chegou quentinha e deliciosa!,2026-03-06 22:35:39,Promotor
+142,248,14,5,Voltarei com certeza. Recomendo demais!,2026-03-17 21:08:07,Promotor
+143,249,50,5,Excelente! Pizza chegou quentinha e deliciosa!,2025-12-05 15:47:24,Promotor
+144,250,46,5,Melhor pizza de Niterói!,2026-01-10 09:30:04,Promotor
+145,254,15,3,"Mediana, esperava um pouco mais.",2026-05-20 09:01:09,Neutro
+146,258,35,4,"Pizza ótima, entrega rápida.",2026-02-28 15:17:40,Promotor
+147,259,52,3,"Estava ok, mas a borda veio menos quente.",2026-05-13 21:18:06,Neutro
+148,263,38,4,Muito boa! Só demorou um pouquinho a mais.,2025-12-21 00:35:00,Promotor
+149,267,50,3,Razoável.,2025-12-31 12:04:15,Neutro
+150,269,56,5,Melhor pizza de Niterói!,2025-12-31 20:05:01,Promotor
+151,270,37,3,Razoável.,2025-12-18 00:02:10,Neutro
+152,272,10,4,"Gostei bastante, recomendo.",2025-11-23 01:49:32,Promotor
+153,273,60,4,"Pizza ótima, entrega rápida.",2026-04-19 15:23:05,Promotor
+154,276,31,4,Muito boa! Só demorou um pouquinho a mais.,2025-12-15 21:12:18,Promotor
+155,277,33,5,"Perfeito, amei cada detalhe.",2026-04-12 21:34:16,Promotor

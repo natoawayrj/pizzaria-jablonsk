@@ -1,0 +1,62 @@
+﻿cliente_id,nome,email,telefone,data_nascimento,idade,faixa_etaria,ativo,cadastrado_em,mes_cadastro,ano_cadastro
+1,Brenda Alves,samuel32@example.net,(21) 92824-1409,1967-05-11,59.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+2,Aurora Pastor,bandrade@example.org,(21) 91488-2535,1975-04-06,51.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+3,Amanda Novais,zoeleao@example.org,(21) 99928-7873,1990-12-14,35.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+4,André Teixeira,laviniafernandes@example.com,(21) 97924-6574,1970-12-18,55.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+5,Sr. Caleb Garcia,fogacacatarina@example.net,(21) 92584-6881,1978-05-20,48.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+6,Zoe Campos,jbarros@example.com,(21) 96925-4150,2003-02-28,23.0,18-24,1,2026-05-20 12:43:22,2026-05,2026
+7,Evelyn Santos,aparecidarafael@example.com,(21) 96977-3664,1965-10-24,60.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+8,Mateus da Mota,xporto@example.org,(21) 92169-3803,1985-07-28,40.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+9,João Felipe Sampaio,pereiraluigi@example.net,(21) 94598-6313,1977-01-15,49.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+10,Júlia Porto,ayllavargas@example.org,(21) 96155-4483,1975-12-21,50.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+11,Dr. João Felipe Azevedo,ana-vitoriacunha@example.net,(21) 95040-9830,1994-05-10,32.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+12,Natália Casa Grande,joao-lucas38@example.net,(21) 99348-9085,1978-04-06,48.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+13,Mariane Pacheco,ofonseca@example.org,(21) 97916-2040,1995-01-21,31.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+14,Benicio Camargo,liamvieira@example.net,(21) 92876-9797,1989-02-09,37.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+15,Maria Helena Peixoto,qmoura@example.net,(21) 95315-9201,1961-03-01,65.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+16,Vitor Gabriel Sá,carolina14@example.com,(21) 99837-9689,1971-02-23,55.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+17,Dra. Julia Montenegro,nataliacaldeira@example.net,(21) 92290-2403,1980-09-09,45.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+18,Fernanda Cassiano,lorenzo88@example.org,(21) 97932-4470,2001-02-20,25.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+19,Daniel Fonseca,rhavi03@example.net,(21) 98397-2982,1965-09-28,60.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+20,Sra. Ana Lívia Teixeira,jose-miguelribeiro@example.com,(21) 94608-1117,1997-10-18,28.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+21,Vinícius Pereira,icunha@example.net,(21) 96413-2160,2007-04-30,19.0,18-24,1,2026-05-20 12:43:22,2026-05,2026
+22,Sra. Maria Liz Rios,luna87@example.org,(21) 98744-4981,1977-04-02,49.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+23,Sr. Yuri da Conceição,anthony-gabrielbarbosa@example.net,(21) 91887-2612,2003-05-01,23.0,18-24,1,2026-05-20 12:43:22,2026-05,2026
+24,Bernardo Andrade,diego83@example.com,(21) 99786-8350,2005-11-27,20.0,18-24,1,2026-05-20 12:43:22,2026-05,2026
+25,Vitor Hugo Cardoso,yda-cruz@example.com,(21) 98260-2604,1988-01-31,38.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+26,Calebe Ribeiro,bfogaca@example.com,(21) 94872-3724,1992-02-29,34.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+27,Carlos Eduardo Araújo,vsiqueira@example.org,(21) 97209-1035,1977-04-21,49.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+28,Melissa Carvalho,rcirino@example.com,(21) 94566-1958,1977-05-19,49.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+29,Beatriz Aragão,borgesrenan@example.org,(21) 98811-9238,1988-01-15,38.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+30,Murilo Araújo,gabriellyabreu@example.com,(21) 97615-2964,1978-06-06,47.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+31,Laura Lima,mcassiano@example.com,(21) 96147-4910,1975-03-13,51.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+32,Ágatha Araújo,danilo09@example.com,(21) 92188-1152,1994-08-08,31.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+33,Benjamin Moraes,cirinodavi-miguel@example.net,(21) 95345-3170,1965-01-03,61.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+34,Bárbara Nunes,brunopinto@example.org,(21) 99666-1128,1988-11-28,37.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+35,Stephany Dias,nicolas53@example.com,(21) 92891-2753,1987-04-26,39.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+36,Letícia Marques,diogo07@example.net,(21) 91832-2512,1998-09-11,27.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+37,Vitor Gabriel Cunha,joao51@example.org,(21) 93143-5291,1985-07-12,40.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+38,Pedro Lucas Nogueira,sarah08@example.com,(21) 92232-3442,2005-07-11,20.0,18-24,1,2026-05-20 12:43:22,2026-05,2026
+39,João Camargo,souzaleonardo@example.com,(21) 96050-6974,1979-07-23,46.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+40,Sra. Gabrielly Rodrigues,mirella74@example.org,(21) 97658-3532,1966-08-31,59.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+41,Augusto Abreu,jose-pedro42@example.net,(21) 97745-5065,1990-06-13,35.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+42,Sra. Alexia Camargo,saleskaique@example.net,(21) 98711-4644,1962-11-01,63.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+43,Clara Lopes,bryandas-neves@example.com,(21) 94728-4652,1963-02-05,63.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+44,Josué Rios,fogacajoana@example.net,(21) 95573-6753,1970-11-25,55.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+45,Felipe Jesus,cavalcantibrenda@example.com,(21) 95279-3925,2005-12-20,20.0,18-24,1,2026-05-20 12:43:22,2026-05,2026
+46,João Felipe Castro,garciabreno@example.com,(21) 96139-8149,1975-07-09,50.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+47,Marcela das Neves,pietroalves@example.net,(21) 95173-1727,1973-07-11,52.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+48,Bernardo Vargas,clara86@example.net,(21) 93041-5920,1996-11-14,29.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+49,Danilo da Luz,viniciusandrade@example.org,(21) 93085-4143,2000-12-23,25.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+50,Dr. Pedro Henrique Pereira,gomesmateus@example.com,(21) 97653-9977,1963-05-28,62.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+51,Vicente Nascimento,emanuellalopes@example.org,(21) 94501-9375,2005-08-01,20.0,18-24,1,2026-05-20 12:43:22,2026-05,2026
+52,Luara Ribeiro,silveiraana-clara@example.net,(21) 99445-6491,1981-06-06,44.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+53,Lunna Guerra,jose-miguel36@example.net,(21) 94262-3414,1986-03-08,40.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+54,Srta. Liz Guerra,da-rosaallana@example.org,(21) 94185-7291,1989-08-20,36.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+55,Luna Martins,rmacedo@example.org,(21) 92746-7965,1995-03-03,31.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+56,Srta. Antonella da Paz,francisco34@example.org,(21) 92988-8478,1973-12-07,52.0,45-54,1,2026-05-20 12:43:22,2026-05,2026
+57,Augusto da Cruz,xpimenta@example.org,(21) 99270-7991,1991-05-17,35.0,35-44,1,2026-05-20 12:43:22,2026-05,2026
+58,Evelyn Silva,zmonteiro@example.org,(21) 99540-8939,1970-06-04,55.0,55+,1,2026-05-20 12:43:22,2026-05,2026
+59,Srta. Bianca Vasconcelos,lcamara@example.net,(21) 95451-6502,1995-08-18,30.0,25-34,1,2026-05-20 12:43:22,2026-05,2026
+60,Josué Campos,zcarvalho@example.com,(21) 93503-4505,2005-10-23,20.0,18-24,1,2026-05-20 12:43:22,2026-05,2026
+61,Renato,nato_rj@yahoo.com.br,2197483-7243,,,55+,1,2026-05-22 18:28:21,2026-05,2026

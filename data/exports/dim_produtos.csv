@@ -1,0 +1,25 @@
+﻿produto_key,tipo_produto,produto_id,nome,descricao,categoria,preco,disponivel,created_at
+sabor_1,pizza,1,Margherita,"Molho de tomate, mussarela fresca e manjericão",Tradicionais,39.9,1,2026-05-20 12:43:11
+sabor_2,pizza,2,Calabresa,"Calabresa fatiada, cebola, azeitona e mussarela",Tradicionais,42.9,1,2026-05-20 12:43:11
+sabor_3,pizza,3,Portuguesa,"Presunto, ovo, cebola, azeitona e pimentão",Tradicionais,44.9,1,2026-05-20 12:43:11
+sabor_4,pizza,4,Mussarela,"Mussarela especial, orégano e molho de tomate",Tradicionais,38.9,1,2026-05-20 12:43:11
+sabor_5,pizza,5,Frango com Catupiry,Frango desfiado temperado com Catupiry cremoso,Tradicionais,46.9,1,2026-05-20 12:43:11
+sabor_6,pizza,6,Napolitana,"Tomate fresco, mussarela, manjericão e alho",Tradicionais,41.9,1,2026-05-20 12:43:11
+sabor_7,pizza,7,Quatro Queijos,"Mussarela, parmesão, gorgonzola e provolone",Especiais,54.9,1,2026-05-20 12:43:11
+sabor_8,pizza,8,Pepperoni,Generosa camada de pepperoni com mussarela especial,Especiais,52.9,1,2026-05-20 12:43:11
+sabor_9,pizza,9,Carne Seca,"Carne seca desfiada, catupiry e cebola caramelizada",Especiais,56.9,1,2026-05-20 12:43:11
+sabor_10,pizza,10,Camarão,"Camarão salteado, catupiry e requeijão",Especiais,64.9,1,2026-05-20 12:43:11
+sabor_11,pizza,11,Costela BBQ,"Costela desfiada, molho barbecue e cebola crispy",Especiais,58.9,1,2026-05-20 12:43:11
+sabor_12,pizza,12,Chocolate com Morango,Chocolate ao leite derretido com morangos frescos,Doces,48.9,1,2026-05-20 12:43:11
+sabor_13,pizza,13,Nutella com Banana,Nutella generosa com bananas caramelizadas,Doces,52.9,1,2026-05-20 12:43:11
+sabor_14,pizza,14,Prestígio,Chocolate com coco ralado e leite condensado,Doces,46.9,1,2026-05-20 12:43:11
+sabor_15,pizza,15,Romeu e Julieta,Requeijão cremoso com goiabada,Doces,44.9,1,2026-05-20 12:43:11
+produto_1,avulso,1,Coca-Cola 2L,Refrigerante Coca-Cola 2 litros,Bebidas,12.0,1,2026-05-20 12:43:11
+produto_2,avulso,2,Coca-Cola Lata 350ml,Refrigerante Coca-Cola lata gelada,Bebidas,6.0,1,2026-05-20 12:43:11
+produto_3,avulso,3,Guaraná Antarctica 2L,Refrigerante Guaraná Antarctica 2 litros,Bebidas,10.0,1,2026-05-20 12:43:11
+produto_4,avulso,4,Água Mineral 500ml,Água mineral sem gás,Bebidas,4.0,1,2026-05-20 12:43:11
+produto_5,avulso,5,Suco de Laranja 500ml,Suco natural de laranja,Bebidas,9.0,1,2026-05-20 12:43:11
+produto_6,avulso,6,Petit Gateau,Bolinho de chocolate quente com sorvete,Sobremesas,18.0,1,2026-05-20 12:43:11
+produto_7,avulso,7,Brownie com Sorvete,Brownie caseiro com sorvete de baunilha,Sobremesas,16.0,1,2026-05-20 12:43:11
+produto_8,avulso,8,Batata Frita Grande,"Batata frita crocante, porção grande",Porções,22.0,1,2026-05-20 12:43:11
+produto_9,avulso,9,Frango Frito,Pedaços de frango empanado e frito,Porções,28.0,1,2026-05-20 12:43:11

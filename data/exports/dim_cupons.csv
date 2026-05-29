@@ -1,0 +1,6 @@
+﻿cupom_id,codigo,tipo,valor,valor_minimo,validade,usos_maximos,usos_realizados,ativo
+1,BEMVINDO10,percentual,10.0,0.0,2026-11-16,200,15,1
+2,FIDELIDADE15,percentual,15.0,80.0,2026-11-16,150,8,1
+3,PROMO20,fixo,20.0,100.0,2026-11-16,100,4,1
+4,ANIVERSARIO,percentual,20.0,0.0,2026-11-16,50,14,1
+5,PRIMEIRA5,fixo,5.0,40.0,2026-11-16,500,10,1
