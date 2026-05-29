@@ -9,10 +9,15 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, text, event
 
 DB_URL = os.environ.get('DATABASE_URL', 'sqlite:///pizzaria.db')
 engine = create_engine(DB_URL)
+
+if DB_URL.startswith('sqlite'):
+    @event.listens_for(engine, 'connect')
+    def _enable_sqlite_fk(dbapi_conn, _record):
+        dbapi_conn.execute('PRAGMA foreign_keys=ON')
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS admin_usuarios (

@@ -1,0 +1,5 @@
+# Dependências só de desenvolvimento (seed + export para Power BI).
+# Não necessárias no deploy (PythonAnywhere).
+-r requirements.txt
+Faker==30.3.0
+pandas==2.2.3

@@ -11,6 +11,7 @@
   </div>
 
   <form method="POST" class="row g-4">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
     <!-- ===== COLUNA ESQUERDA ===== -->
     <div class="col-lg-7">

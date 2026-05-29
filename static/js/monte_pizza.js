@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btnAdd.disabled = true;
       return;
     }
-    const avg  = selectedSabores.reduce((s, x) => s + x.preco, 0) / selectedSabores.length;
-    const total = avg + selectedMassaExtra + selectedBordaExtra;
+    const maxPreco = Math.max(...selectedSabores.map(x => x.preco));
+    const total = maxPreco + selectedMassaExtra + selectedBordaExtra;
     precoEl.textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
     prevEl.textContent  = selectedSabores.map(s => s.nome).join(' + ');
     btnAdd.disabled = false;

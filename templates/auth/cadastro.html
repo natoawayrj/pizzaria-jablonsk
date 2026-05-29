@@ -18,6 +18,7 @@
           </div>
 
           <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="mb-3">
               <label class="form-label">Nome completo</label>
               <input type="text" name="nome" class="form-control" required autofocus

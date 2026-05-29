@@ -1,7 +1,7 @@
-from datetime import datetime
+from datetime import datetime, date
 from flask import (Blueprint, render_template, request, redirect,
                    url_for, session, flash, jsonify)
-from .db import query_one, query_all, execute
+from .db import query_one, query_all, execute, transaction, tx_execute, group_concat
 from .auth import login_required
 
 pedido_bp = Blueprint('pedido', __name__)
@@ -25,12 +25,17 @@ def adicionar_ao_carrinho():
 
         massa   = query_one("SELECT nome, preco_adicional FROM massas WHERE id=:id", {'id': massa_id})
         borda   = query_one("SELECT nome, preco_adicional FROM bordas WHERE id=:id", {'id': borda_id})
+        # IN (...) com bind params nomeados (sem f-string de valores na SQL)
+        placeholders = ','.join(f':s{i}' for i in range(len(sabor_ids)))
+        sabor_params = {f's{i}': sid for i, sid in enumerate(sabor_ids)}
         sabores = query_all(
-            f"SELECT id, nome, preco_base FROM sabores WHERE id IN ({','.join(str(i) for i in sabor_ids)})"
+            f"SELECT id, nome, preco_base FROM sabores WHERE id IN ({placeholders})",
+            sabor_params
         )
 
+        # Pizza multi-sabor cobra o sabor mais caro (padrão de pizzaria)
         preco = round(
-            sum(float(s['preco_base']) for s in sabores) / len(sabores)
+            max(float(s['preco_base']) for s in sabores)
             + float(massa['preco_adicional']) + float(borda['preco_adicional']), 2
         )
         carrinho.append({
@@ -119,8 +124,8 @@ def checkout():
             c = query_one("""
                 SELECT id, tipo, valor, valor_minimo, usos_maximos, usos_realizados
                 FROM cupons WHERE codigo=:c AND ativo=1
-                  AND (validade IS NULL OR validade >= CURDATE())
-            """, {'c': cupom_codigo})
+                  AND (validade IS NULL OR validade >= :hoje)
+            """, {'c': cupom_codigo, 'hoje': date.today().isoformat()})
             if c and float(c['valor_minimo']) <= subtotal:
                 if c['usos_maximos'] is None or c['usos_realizados'] < c['usos_maximos']:
                     cupom_id = c['id']
@@ -137,45 +142,57 @@ def checkout():
         troco  = float(troco_para) if troco_para and forma == 'dinheiro' else None
         agora  = datetime.now()
 
-        pedido_id = execute("""
-            INSERT INTO pedidos
-                (cliente_id, endereco_id, cupom_id, status, recebido_em,
-                 subtotal, desconto, total, forma_pagamento, troco_para, observacao,
-                 created_at, updated_at)
-            VALUES
-                (:cid, :eid, :cupid, 'recebido', :now,
-                 :sub, :desc, :tot, :forma, :troco, :obs,
-                 :now, :now)
-        """, {'cid': cid, 'eid': eid, 'cupid': cupom_id, 'now': agora,
-              'sub': subtotal, 'desc': desconto, 'tot': total,
-              'forma': forma, 'troco': troco, 'obs': observacao})
+        # Tudo numa transação só: pedido + itens + sabores + histórico + cupom + estoque.
+        # Se qualquer passo falhar, nada é gravado (sem pedido órfão/parcial).
+        with transaction() as conn:
+            pedido_id = tx_execute(conn, """
+                INSERT INTO pedidos
+                    (cliente_id, endereco_id, cupom_id, status, recebido_em,
+                     subtotal, desconto, total, forma_pagamento, troco_para, observacao,
+                     created_at, updated_at)
+                VALUES
+                    (:cid, :eid, :cupid, 'recebido', :now,
+                     :sub, :desc, :tot, :forma, :troco, :obs,
+                     :now, :now)
+            """, {'cid': cid, 'eid': eid, 'cupid': cupom_id, 'now': agora,
+                  'sub': subtotal, 'desc': desconto, 'tot': total,
+                  'forma': forma, 'troco': troco, 'obs': observacao})
 
-        for item in carrinho:
-            item_id = execute("""
-                INSERT INTO itens_pedido
-                    (pedido_id, tipo, massa_id, borda_id, produto_id,
-                     quantidade, preco_unitario, subtotal)
-                VALUES (:pid,:tipo,:m,:b,:p,:qtd,:preco,:sub)
-            """, {'pid': pedido_id, 'tipo': item['tipo'],
-                  'm': item.get('massa_id'), 'b': item.get('borda_id'),
-                  'p': item.get('produto_id'),
-                  'qtd': item['quantidade'], 'preco': item['preco_unitario'],
-                  'sub': item['subtotal']})
+            for item in carrinho:
+                item_id = tx_execute(conn, """
+                    INSERT INTO itens_pedido
+                        (pedido_id, tipo, massa_id, borda_id, produto_id,
+                         quantidade, preco_unitario, subtotal)
+                    VALUES (:pid,:tipo,:m,:b,:p,:qtd,:preco,:sub)
+                """, {'pid': pedido_id, 'tipo': item['tipo'],
+                      'm': item.get('massa_id'), 'b': item.get('borda_id'),
+                      'p': item.get('produto_id'),
+                      'qtd': item['quantidade'], 'preco': item['preco_unitario'],
+                      'sub': item['subtotal']})
 
-            if item['tipo'] == 'pizza':
-                for pos, s in enumerate(item['sabores'], 1):
-                    execute(
-                        "INSERT INTO itens_pedido_sabores (item_pedido_id, sabor_id, posicao) VALUES (:i,:s,:p)",
-                        {'i': item_id, 's': s['id'], 'p': pos}
+                if item['tipo'] == 'pizza':
+                    for pos, s in enumerate(item['sabores'], 1):
+                        tx_execute(conn,
+                            "INSERT INTO itens_pedido_sabores (item_pedido_id, sabor_id, posicao) VALUES (:i,:s,:p)",
+                            {'i': item_id, 's': s['id'], 'p': pos}
+                        )
+                elif item['tipo'] == 'produto':
+                    # Baixa de estoque (não desce abaixo de zero)
+                    tx_execute(conn,
+                        "UPDATE produtos SET estoque = CASE WHEN estoque >= :q THEN estoque - :q ELSE 0 END "
+                        "WHERE id = :p",
+                        {'q': item['quantidade'], 'p': item['produto_id']}
                     )
 
-        execute(
-            "INSERT INTO status_historico (pedido_id, status_anterior, status_novo, created_at) "
-            "VALUES (:pid, NULL, 'recebido', :now)",
-            {'pid': pedido_id, 'now': agora}
-        )
-        if cupom_id:
-            execute("UPDATE cupons SET usos_realizados=usos_realizados+1 WHERE id=:id", {'id': cupom_id})
+            tx_execute(conn,
+                "INSERT INTO status_historico (pedido_id, status_anterior, status_novo, created_at) "
+                "VALUES (:pid, NULL, 'recebido', :now)",
+                {'pid': pedido_id, 'now': agora}
+            )
+            if cupom_id:
+                tx_execute(conn,
+                    "UPDATE cupons SET usos_realizados=usos_realizados+1 WHERE id=:id",
+                    {'id': cupom_id})
 
         session.pop('carrinho', None)
         flash('Pedido realizado com sucesso! Acompanhe o status abaixo.', 'success')
@@ -200,10 +217,10 @@ def status_pedido(pedido_id):
         flash('Pedido não encontrado.', 'danger')
         return redirect(url_for('pedido.meus_pedidos'))
 
-    itens = query_all("""
+    itens = query_all(f"""
         SELECT ip.tipo, ip.quantidade, ip.preco_unitario, ip.subtotal,
                m.nome AS massa, b.nome AS borda, prod.nome AS produto,
-               GROUP_CONCAT(s.nome ORDER BY ips.posicao SEPARATOR ' + ') AS sabores
+               {group_concat('s.nome', 'ips.posicao')} AS sabores
         FROM itens_pedido ip
         LEFT JOIN massas   m    ON m.id   = ip.massa_id
         LEFT JOIN bordas   b    ON b.id   = ip.borda_id

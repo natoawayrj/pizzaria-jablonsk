@@ -46,6 +46,7 @@
 
         <div class="card-footer">
           <form action="{{ url_for('pedido.adicionar_ao_carrinho') }}" method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <input type="hidden" name="tipo"      value="pizza">
             <input type="hidden" name="massa_id"  value="1">
             <input type="hidden" name="borda_id"  value="1">
@@ -100,6 +101,7 @@
 
         <div class="card-footer">
           <form action="{{ url_for('pedido.adicionar_ao_carrinho') }}" method="POST" class="d-flex gap-2 align-items-center">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <input type="hidden" name="tipo"       value="produto">
             <input type="hidden" name="produto_id" value="{{ p.id }}">
             <input type="number" name="quantidade" value="1" min="1" max="10"

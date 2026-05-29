@@ -51,6 +51,7 @@
   </div>
 
   <form action="{{ url_for('pedido.adicionar_ao_carrinho') }}" method="POST" id="form-pizza">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <input type="hidden" name="tipo"     value="pizza">
     <input type="hidden" name="massa_id" id="f-massa" value="{{ massas[0].id }}">
     <input type="hidden" name="borda_id" id="f-borda" value="{{ bordas[0].id }}">
@@ -114,7 +115,7 @@
         <span style="font-weight:400;font-size:.82rem;color:var(--text-3);margin-left:.4rem;">(até 3)</span>
       </h5>
       <p style="font-size:.82rem;color:var(--text-3);margin-bottom:1rem;">
-        Mais de 1 sabor = preço médio entre os escolhidos
+        Mais de 1 sabor = cobra o sabor mais caro
       </p>
 
       <!-- Filtro por categoria -->

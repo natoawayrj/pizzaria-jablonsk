@@ -2,6 +2,7 @@ import functools
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from .db import query_one, execute
+from .throttle import bloqueado, registrar_falha, limpar
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -24,17 +25,24 @@ def login():
     if request.method == 'POST':
         email = request.form['email'].strip().lower()
         senha = request.form['senha']
+        chave = f"cliente:{request.remote_addr}:{email}"
+
+        if bloqueado(chave):
+            flash('Muitas tentativas. Aguarde alguns minutos e tente de novo.', 'warning')
+            return render_template('auth/login.html')
 
         cliente = query_one(
             "SELECT id, nome, senha_hash FROM clientes WHERE email=:e AND ativo=1",
             {'e': email}
         )
         if cliente and check_password_hash(cliente['senha_hash'], senha):
+            limpar(chave)
             session['cliente_id']   = cliente['id']
             session['cliente_nome'] = cliente['nome']
             flash(f'Bem-vindo, {cliente["nome"].split()[0]}!', 'success')
             return redirect(request.args.get('next') or url_for('cardapio.index'))
 
+        registrar_falha(chave)
         flash('E-mail ou senha incorretos.', 'danger')
 
     return render_template('auth/login.html')

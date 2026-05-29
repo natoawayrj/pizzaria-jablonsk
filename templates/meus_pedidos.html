@@ -16,7 +16,7 @@
               <span class="text-muted small">#{{ p.id }}</span>
               <div class="fw-semibold">{{ p.qtd_itens }} item{{ 's' if p.qtd_itens != 1 }}</div>
               <div class="text-muted small">
-                {{ p.created_at.strftime('%d/%m/%Y %H:%M') if p.created_at else '' }}
+                {{ p.created_at | dtfmt('%d/%m/%Y %H:%M') }}
               </div>
             </div>
             <div class="text-center">

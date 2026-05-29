@@ -1,13 +1,23 @@
 import functools
-from datetime import datetime
+from datetime import datetime, date
 from flask import (Blueprint, render_template, request, redirect,
                    url_for, session, flash)
 from werkzeug.security import check_password_hash
-from .db import query_one, query_all, execute
+from .db import query_one, query_all, execute, group_concat, ano_mes
+from .throttle import bloqueado, registrar_falha, limpar
 
 admin_bp = Blueprint('admin', __name__)
 
 STATUS_FLOW = ['recebido', 'em_producao', 'saiu_para_entrega', 'entregue']
+
+# Transições válidas — bloqueia saltos/retrocessos que corrompem SLA
+TRANSICOES_VALIDAS = {
+    'recebido':          {'em_producao', 'cancelado'},
+    'em_producao':       {'saiu_para_entrega', 'cancelado'},
+    'saiu_para_entrega': {'entregue', 'cancelado'},
+    'entregue':          set(),
+    'cancelado':         set(),
+}
 
 
 def admin_required(f):
@@ -27,6 +37,12 @@ def login():
     if request.method == 'POST':
         email = request.form['email'].strip().lower()
         senha = request.form['senha']
+        chave = f"admin:{request.remote_addr}:{email}"
+
+        if bloqueado(chave):
+            flash('Muitas tentativas. Aguarde alguns minutos e tente de novo.', 'warning')
+            return render_template('admin/login.html')
+
         admin = query_one(
             "SELECT id, nome, senha_hash, perfil FROM admin_usuarios WHERE email=:e AND ativo=1",
             {'e': email}
@@ -37,6 +53,7 @@ def login():
             valid = False
 
         if valid:
+            limpar(chave)
             session['admin_id']    = admin['id']
             session['admin_nome']  = admin['nome']
             session['admin_perfil'] = admin['perfil']
@@ -44,6 +61,7 @@ def login():
                     {'now': datetime.now(), 'id': admin['id']})
             return redirect(url_for('admin.dashboard'))
 
+        registrar_falha(chave)
         flash('Credenciais inválidas.', 'danger')
 
     return render_template('admin/login.html')
@@ -60,27 +78,28 @@ def logout():
 @admin_bp.route('/')
 @admin_required
 def dashboard():
+    hoje = date.today().isoformat()
     stats = query_one("""
         SELECT
-            (SELECT COUNT(*) FROM pedidos WHERE DATE(created_at) = CURDATE())           AS pedidos_hoje,
+            (SELECT COUNT(*) FROM pedidos WHERE DATE(created_at) = :hoje)                AS pedidos_hoje,
             (SELECT COUNT(*) FROM pedidos WHERE status = 'recebido')                    AS aguardando,
             (SELECT COUNT(*) FROM pedidos WHERE status = 'em_producao')                 AS em_producao,
             (SELECT COUNT(*) FROM pedidos WHERE status = 'saiu_para_entrega')           AS na_entrega,
             (SELECT ROUND(IFNULL(SUM(total),0),2)
                FROM pedidos WHERE status='entregue'
-               AND DATE(created_at) = CURDATE())                                        AS fat_hoje,
+               AND DATE(created_at) = :hoje)                                            AS fat_hoje,
             (SELECT ROUND(IFNULL(AVG(total),0),2)
                FROM pedidos WHERE status='entregue')                                    AS ticket_medio,
             (SELECT ROUND(IFNULL(AVG(nota),0),2) FROM avaliacoes)                      AS nota_media
-    """)
+    """, {'hoje': hoje})
     recentes = query_all("""
         SELECT p.id, c.nome AS cliente, p.status, p.total,
                p.forma_pagamento, p.created_at
         FROM pedidos p JOIN clientes c ON c.id = p.cliente_id
         ORDER BY p.created_at DESC LIMIT 10
     """)
-    fat_mensal = query_all("""
-        SELECT DATE_FORMAT(created_at,'%Y-%m') AS mes,
+    fat_mensal = query_all(f"""
+        SELECT {ano_mes('created_at')} AS mes,
                ROUND(SUM(total),2) AS faturamento, COUNT(*) AS pedidos
         FROM pedidos WHERE status='entregue'
         GROUP BY mes ORDER BY mes DESC LIMIT 6
@@ -136,10 +155,10 @@ def pedido_detalhe(pedido_id):
         flash('Pedido não encontrado.', 'danger')
         return redirect(url_for('admin.pedidos'))
 
-    itens = query_all("""
+    itens = query_all(f"""
         SELECT ip.tipo, ip.quantidade, ip.preco_unitario, ip.subtotal,
                m.nome AS massa, b.nome AS borda, prod.nome AS produto,
-               GROUP_CONCAT(s.nome ORDER BY ips.posicao SEPARATOR ' + ') AS sabores
+               {group_concat('s.nome', 'ips.posicao')} AS sabores
         FROM itens_pedido ip
         LEFT JOIN massas   m    ON m.id    = ip.massa_id
         LEFT JOIN bordas   b    ON b.id    = ip.borda_id
@@ -170,6 +189,11 @@ def atualizar_status(pedido_id):
 
     novo    = request.form['status']
     ant     = pedido['status']
+
+    if novo not in TRANSICOES_VALIDAS.get(ant, set()):
+        flash(f'Transição inválida: {ant} → {novo}.', 'danger')
+        return redirect(url_for('admin.pedido_detalhe', pedido_id=pedido_id))
+
     agora   = datetime.now()
     aid     = session['admin_id']
 

@@ -14,10 +14,10 @@ Configuração:
 """
 
 import random
-import hashlib
 from datetime import datetime, timedelta
 from faker import Faker
 from sqlalchemy import create_engine, text
+from werkzeug.security import generate_password_hash
 
 import os
 from dotenv import load_dotenv
@@ -65,7 +65,8 @@ COMENTARIOS_POR_NOTA = {
 # -----------------------------------------------------------------------------
 
 def hash_senha(senha: str) -> str:
-    return hashlib.sha256(senha.encode()).hexdigest()
+    # werkzeug — mesmo formato que o login do app valida (check_password_hash)
+    return generate_password_hash(senha)
 
 
 def gerar_datetime_realista() -> datetime:
@@ -192,9 +193,9 @@ def inserir_pedidos(conn, cliente_ids):
             n_sabores = random.choices([1,2,3], weights=[40,40,20])[0]
             sabores_escolhidos = random.sample(sabor_list, min(n_sabores, len(sabor_list)))
 
-            # Preço = média dos sabores + adicional de massa e borda
+            # Preço = sabor mais caro + adicional de massa e borda
             preco_pizza = round(
-                sum(sabores[s] for s in sabores_escolhidos) / len(sabores_escolhidos)
+                max(sabores[s] for s in sabores_escolhidos)
                 + massas[massa_id] + bordas[borda_id], 2
             )
             itens.append({'tipo':'pizza','massa_id':massa_id,'borda_id':borda_id,

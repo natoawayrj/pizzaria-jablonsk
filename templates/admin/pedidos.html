@@ -43,7 +43,7 @@
           <td class="text-muted small">{{ p.forma_pagamento.replace('_',' ') }}</td>
           <td><span class="badge status-{{ p.status }}">{{ p.status.replace('_',' ') }}</span></td>
           <td class="text-muted small">
-            {{ p.created_at.strftime('%d/%m %H:%M') if p.created_at else '' }}
+            {{ p.created_at | dtfmt('%d/%m %H:%M') }}
           </td>
           <td>
             <a href="{{ url_for('admin.pedido_detalhe', pedido_id=p.id) }}"
