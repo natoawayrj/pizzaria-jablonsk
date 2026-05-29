@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Adicionar Endereço — Pizzaria Jablonsk{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-sm-10 col-md-7 col-lg-5">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <h4 class="fw-bold mb-4">
+            <i class="bi bi-geo-alt text-orange me-2"></i>Endereço de Entrega
+          </h4>
+          <form method="POST">
+            <div class="mb-3">
+              <label class="form-label small fw-medium">Logradouro</label>
+              <input type="text" name="logradouro" class="form-control" required
+                     placeholder="Rua, Avenida, Travessa...">
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-4">
+                <label class="form-label small fw-medium">Número</label>
+                <input type="text" name="numero" class="form-control" required>
+              </div>
+              <div class="col-8">
+                <label class="form-label small fw-medium">Complemento</label>
+                <input type="text" name="complemento" class="form-control" placeholder="Apto, Bloco...">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-medium">Bairro</label>
+              <input type="text" name="bairro" class="form-control" required>
+            </div>
+            <div class="mb-4">
+              <label class="form-label small fw-medium">CEP</label>
+              <input type="text" name="cep" class="form-control" required placeholder="00000-000" maxlength="9">
+            </div>
+            <button class="btn btn-orange w-100 rounded-pill fw-semibold">
+              <i class="bi bi-check-circle me-1"></i> Salvar Endereço
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

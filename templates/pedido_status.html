@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% block title %}Pedido #{{ pedido.id }} — Pizzaria Jablonsk{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <div class="section-label">Acompanhar</div>
+          <h2 class="mb-0" style="font-size:1.8rem;">Pedido #{{ pedido.id }}</h2>
+        </div>
+        <span id="status-badge" class="badge fs-6 status-{{ pedido.status }}">
+          {{ pedido.status.replace('_',' ').title() }}
+        </span>
+      </div>
+
+      <!-- ===== TIMELINE ===== -->
+      <div class="card mb-4">
+        <div class="card-body p-4">
+          <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:1.5rem;">
+            Status do pedido
+          </div>
+
+          {% set steps = [
+            ('recebido','Recebido','receipt'),
+            ('em_producao','Produção','fire'),
+            ('saiu_para_entrega','Saiu','bicycle'),
+            ('entregue','Entregue','check-circle-fill')
+          ] %}
+          {% set status_order = ['recebido','em_producao','saiu_para_entrega','entregue'] %}
+          {% set current_idx = status_order.index(pedido.status) if pedido.status in status_order else -1 %}
+
+          <div class="d-flex justify-content-between position-relative">
+            <div class="timeline-line"></div>
+            {% for key, label, icon in steps %}
+            {% set step_idx = loop.index0 %}
+            <div class="text-center flex-fill">
+              <div class="timeline-dot
+                  {% if step_idx <= current_idx %}active{% endif %}
+                  {% if step_idx == current_idx %}current{% endif %}">
+                <i class="bi bi-{{ icon }}"></i>
+              </div>
+              <div class="mt-2" style="font-size:.72rem;font-weight:600;
+                  color:{% if step_idx <= current_idx %}var(--text){% else %}var(--text-4){% endif %};">
+                {{ label }}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          {% if pedido.status == 'cancelado' %}
+          <div class="alert alert-danger mt-4 mb-0" style="font-size:.85rem;">
+            <i class="bi bi-x-circle me-1"></i> Pedido cancelado
+            {% if pedido.cancelamento_motivo %} — {{ pedido.cancelamento_motivo }}{% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- ===== ITENS ===== -->
+      <div class="card mb-4">
+        <div class="card-body p-4">
+          <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:1rem;">
+            Itens
+          </div>
+          {% for item in itens %}
+          <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
+            <span style="font-size:.88rem;color:var(--text-2);">
+              {% if item.tipo == 'pizza' %}
+                🍕 {{ item.sabores }} — {{ item.massa }}, {{ item.borda }}
+              {% else %}
+                📦 {{ item.produto }} ×{{ item.quantidade }}
+              {% endif %}
+            </span>
+            <span style="font-size:.9rem;font-weight:600;white-space:nowrap;">
+              R$ {{ '%.2f'|format(item.subtotal) }}
+            </span>
+          </div>
+          {% endfor %}
+
+          <div style="border-top:1px solid var(--border);margin-top:.75rem;padding-top:.75rem;" class="d-flex justify-content-between fw-bold">
+            <span>Total</span>
+            <span class="text-orange" style="font-family:var(--font-display);font-size:1.1rem;">
+              R$ {{ '%.2f'|format(pedido.total) }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== INFO ===== -->
+      <div class="card mb-4">
+        <div class="card-body p-4">
+          <div class="row g-3">
+            <div class="col-6">
+              <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:.3rem;">Pagamento</div>
+              <div style="font-size:.9rem;">{{ pedido.forma_pagamento.replace('_',' ').title() }}</div>
+            </div>
+            <div class="col-6">
+              <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:.3rem;">Entrega em</div>
+              <div style="font-size:.88rem;">{{ pedido.logradouro }}, {{ pedido.numero }} — {{ pedido.bairro }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== AVALIAÇÃO ===== -->
+      {% if pedido.status == 'entregue' and not avaliacao %}
+      <div class="card mb-4" style="border-color:rgba(249,115,22,.25) !important;background:var(--orange-dim) !important;">
+        <div class="card-body p-4 text-center">
+          <div style="font-size:2rem;margin-bottom:.5rem;">⭐</div>
+          <h6 class="fw-bold mb-1">Como foi seu pedido?</h6>
+          <p style="font-size:.82rem;color:var(--text-3);margin-bottom:1rem;">Sua opinião nos ajuda a melhorar.</p>
+          <a href="{{ url_for('pedido.avaliar', pedido_id=pedido.id) }}"
+             class="btn btn-orange rounded-pill px-4">Avaliar Pedido</a>
+        </div>
+      </div>
+      {% elif avaliacao %}
+      <div class="card mb-4 text-center">
+        <div class="card-body p-3">
+          {% for i in range(5) %}
+          <i class="bi bi-star{% if i < avaliacao.nota %}-fill{% endif %} text-orange" style="font-size:1.2rem;"></i>
+          {% endfor %}
+          <div style="font-size:.8rem;color:var(--text-3);margin-top:.4rem;">Avaliado com {{ avaliacao.nota }}/5</div>
+        </div>
+      </div>
+      {% endif %}
+
+      <a href="{{ url_for('pedido.meus_pedidos') }}"
+         class="btn btn-outline-secondary rounded-pill px-4">
+        <i class="bi bi-arrow-left me-1"></i> Meus Pedidos
+      </a>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% if pedido.status not in ['entregue','cancelado'] %}
+<script>
+  const PEDIDO_ID = {{ pedido.id }};
+  const STATUS_URL = `/pedido/${PEDIDO_ID}/status-json`;
+  const LABELS = {
+    recebido: 'Pedido Recebido',
+    em_producao: 'Em Produção',
+    saiu_para_entrega: 'Saiu para Entrega',
+    entregue: 'Entregue',
+    cancelado: 'Cancelado'
+  };
+  setInterval(async () => {
+    try {
+      const r = await fetch(STATUS_URL);
+      const d = await r.json();
+      const badge = document.getElementById('status-badge');
+      if (badge && d.status) {
+        badge.textContent = LABELS[d.status] || d.status;
+        badge.className = `badge fs-6 status-${d.status}`;
+        if (['entregue', 'cancelado'].includes(d.status)) location.reload();
+      }
+    } catch(e) {}
+  }, 6000);
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'admin/base_admin.html' %}
+{% block title %}Pedidos{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h3 class="fw-bold mb-0">Pedidos</h3>
+</div>
+
+<!-- Filtros -->
+<form method="GET" class="row g-2 mb-4">
+  <div class="col-auto">
+    <select name="status" class="form-select form-select-sm rounded-pill">
+      <option value="">Todos os status</option>
+      {% for s in ['recebido','em_producao','saiu_para_entrega','entregue','cancelado'] %}
+      <option value="{{ s }}" {% if s == status_filtro %}selected{% endif %}>
+        {{ s.replace('_',' ').title() }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-auto">
+    <input type="date" name="data" value="{{ data_filtro }}" class="form-control form-control-sm rounded-pill">
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-sm btn-orange rounded-pill px-3">Filtrar</button>
+    <a href="{{ url_for('admin.pedidos') }}" class="btn btn-sm btn-outline-secondary rounded-pill">Limpar</a>
+  </div>
+</form>
+
+<div class="card border-0 shadow-sm">
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="text-muted small"><tr>
+        <th>#</th><th>Cliente</th><th>Itens</th>
+        <th>Total</th><th>Pagamento</th><th>Status</th><th>Data</th><th></th>
+      </tr></thead>
+      <tbody>
+        {% for p in pedidos %}
+        <tr>
+          <td class="fw-medium">#{{ p.id }}</td>
+          <td>{{ p.cliente }}</td>
+          <td class="text-muted">{{ p.qtd_itens }}</td>
+          <td class="fw-semibold text-orange">R$ {{ '%.2f'|format(p.total) }}</td>
+          <td class="text-muted small">{{ p.forma_pagamento.replace('_',' ') }}</td>
+          <td><span class="badge status-{{ p.status }}">{{ p.status.replace('_',' ') }}</span></td>
+          <td class="text-muted small">
+            {{ p.created_at.strftime('%d/%m %H:%M') if p.created_at else '' }}
+          </td>
+          <td>
+            <a href="{{ url_for('admin.pedido_detalhe', pedido_id=p.id) }}"
+               class="btn btn-sm btn-outline-secondary rounded-pill">Ver</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

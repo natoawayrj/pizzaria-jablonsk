@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% block title %}Monte sua Pizza — Pizzaria Jablonsk{% endblock %}
+
+{% block head %}
+<style>
+  .opt-card { cursor:pointer; transition:all .2s; border:2px solid var(--border) !important; }
+  .opt-card:hover { border-color:rgba(249,115,22,.5) !important; transform:translateY(-2px); }
+  .opt-card.selected { border-color:var(--orange) !important; background:var(--orange-dim) !important; box-shadow:0 0 0 3px rgba(249,115,22,.1); }
+
+  .sabor-card { cursor:pointer; transition:all .16s; border:2px solid var(--border) !important; overflow:hidden; }
+  .sabor-card:hover { border-color:rgba(249,115,22,.5) !important; }
+  .sabor-card.selected { border-color:var(--orange) !important; background:var(--orange-dim) !important; }
+  .sabor-card.selected::after {
+    content:'✓';
+    position:absolute; top:6px; right:8px;
+    background:var(--orange);
+    color:#fff;
+    width:20px; height:20px;
+    border-radius:50%;
+    font-size:.65rem;
+    font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .sabor-card { position:relative; }
+  .sabor-card.disabled { opacity:.28; pointer-events:none; }
+
+  .cat-btn { font-size:.78rem; font-weight:600; }
+  .cat-btn.active { background:var(--orange) !important; border-color:var(--orange) !important; color:#fff !important; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="max-width:900px;">
+
+  <!-- Header -->
+  <div class="mb-4">
+    <div class="section-label">Personalizar</div>
+    <h2 class="mb-1" style="font-size:2rem;">Monte sua Pizza</h2>
+    <p style="color:var(--text-3);font-size:.9rem;">Escolha a massa, a borda e até 3 sabores.</p>
+  </div>
+
+  <!-- Price preview — sticky top -->
+  <div class="price-preview-card mb-5">
+    <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:.5rem;">
+      Valor estimado
+    </div>
+    <div id="preco-preview" class="text-orange">R$ —</div>
+    <div id="sabores-preview" style="font-size:.82rem;color:var(--text-3);margin-top:.4rem;">
+      Selecione ao menos 1 sabor
+    </div>
+  </div>
+
+  <form action="{{ url_for('pedido.adicionar_ao_carrinho') }}" method="POST" id="form-pizza">
+    <input type="hidden" name="tipo"     value="pizza">
+    <input type="hidden" name="massa_id" id="f-massa" value="{{ massas[0].id }}">
+    <input type="hidden" name="borda_id" id="f-borda" value="{{ bordas[0].id }}">
+
+    <!-- ===== PASSO 1: Massa ===== -->
+    <div class="mb-5">
+      <h5 class="step-heading">
+        <span class="badge-step">1</span> Escolha a massa
+      </h5>
+      <div class="row g-2">
+        {% for m in massas %}
+        <div class="col-6 col-md-3">
+          <div class="card opt-card p-3 text-center {% if loop.first %}selected{% endif %}"
+               data-type="massa" data-id="{{ m.id }}"
+               data-extra="{{ m.preco_adicional }}">
+            <div class="fw-bold" style="font-size:.9rem;margin-bottom:.2rem;">{{ m.nome }}</div>
+            <div style="font-size:.75rem;color:var(--text-3);">{{ m.descricao or '' }}</div>
+            {% if m.preco_adicional > 0 %}
+            <div class="text-orange" style="font-size:.75rem;margin-top:.3rem;font-weight:600;">
+              +R$ {{ '%.2f'|format(m.preco_adicional) }}
+            </div>
+            {% else %}
+            <div style="font-size:.72rem;color:var(--text-4);margin-top:.3rem;">sem acréscimo</div>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ===== PASSO 2: Borda ===== -->
+    <div class="mb-5">
+      <h5 class="step-heading">
+        <span class="badge-step">2</span> Escolha a borda
+      </h5>
+      <div class="row g-2">
+        {% for b in bordas %}
+        <div class="col-6 col-md-3">
+          <div class="card opt-card p-3 text-center {% if loop.first %}selected{% endif %}"
+               data-type="borda" data-id="{{ b.id }}"
+               data-extra="{{ b.preco_adicional }}">
+            <div class="fw-bold" style="font-size:.9rem;margin-bottom:.2rem;">{{ b.nome }}</div>
+            {% if b.preco_adicional > 0 %}
+            <div class="text-orange" style="font-size:.75rem;font-weight:600;">
+              +R$ {{ '%.2f'|format(b.preco_adicional) }}
+            </div>
+            {% else %}
+            <div style="font-size:.72rem;color:var(--text-4);">sem acréscimo</div>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ===== PASSO 3: Sabores ===== -->
+    <div class="mb-5">
+      <h5 class="step-heading">
+        <span class="badge-step">3</span>
+        Escolha os sabores
+        <span style="font-weight:400;font-size:.82rem;color:var(--text-3);margin-left:.4rem;">(até 3)</span>
+      </h5>
+      <p style="font-size:.82rem;color:var(--text-3);margin-bottom:1rem;">
+        Mais de 1 sabor = preço médio entre os escolhidos
+      </p>
+
+      <!-- Filtro por categoria -->
+      <div class="d-flex flex-wrap gap-2 mb-3" id="cat-filter">
+        <button type="button" class="btn btn-sm btn-orange rounded-pill cat-btn active" data-cat="all">Todos</button>
+        {% set cats_seen = [] %}
+        {% for s in sabores %}
+          {% if s.categoria not in cats_seen %}
+          {% set _ = cats_seen.append(s.categoria) %}
+          <button type="button"
+                  class="btn btn-sm btn-outline-secondary rounded-pill cat-btn"
+                  data-cat="{{ s.categoria_id }}">{{ s.categoria }}</button>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Grid de sabores -->
+      <div class="row g-2" id="sabores-grid">
+        {% for s in sabores %}
+        <div class="col-6 col-md-4 col-lg-3 sabor-item" data-cat="{{ s.categoria_id }}">
+          <div class="card sabor-card"
+               data-id="{{ s.id }}"
+               data-preco="{{ s.preco_base }}"
+               data-nome="{{ s.nome }}">
+            {% if s.imagem_url %}
+            <img src="{{ s.imagem_url }}" alt="{{ s.nome }}"
+                 class="card-img-top" style="height:85px;object-fit:cover;">
+            {% else %}
+            <div style="height:60px;background:var(--card-2);display:flex;align-items:center;justify-content:center;font-size:2rem;">🍕</div>
+            {% endif %}
+            <div class="p-2">
+              <div class="fw-bold" style="font-size:.82rem;margin-bottom:.1rem;">{{ s.nome }}</div>
+              <div style="font-size:.7rem;color:var(--text-3);">{{ s.categoria }}</div>
+              <div class="text-orange fw-bold" style="font-size:.8rem;margin-top:.2rem;">
+                R$ {{ '%.2f'|format(s.preco_base) }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Dados para JS -->
+    <script>
+      const MASSAS = {{ massas|tojson }};
+      const BORDAS = {{ bordas|tojson }};
+    </script>
+
+    <!-- CTA -->
+    <div class="d-flex justify-content-between align-items-center pt-2">
+      <a href="{{ url_for('cardapio.cardapio') }}" class="btn btn-outline-secondary rounded-pill px-4">
+        <i class="bi bi-arrow-left me-1"></i> Voltar
+      </a>
+      <button type="submit" class="btn btn-orange btn-lg rounded-pill px-5 fw-semibold" id="btn-add" disabled>
+        <i class="bi bi-bag-plus me-2"></i> Adicionar ao carrinho
+      </button>
+    </div>
+
+  </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/monte_pizza.js') }}"></script>
+{% endblock %}

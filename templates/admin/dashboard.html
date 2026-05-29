@@ -1,0 +1,108 @@
+{% extends 'admin/base_admin.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h3 class="fw-bold mb-4">Dashboard</h3>
+
+<!-- KPIs -->
+<div class="row g-3 mb-4">
+  {% for label, val, icon, color in [
+    ('Pedidos Hoje',     stats.pedidos_hoje, 'receipt',           'text-orange'),
+    ('Faturamento Hoje', 'R$ ' ~ ('%.2f'|format(stats.fat_hoje or 0)), 'cash-coin', 'text-success'),
+    ('Ticket Médio',     'R$ ' ~ ('%.2f'|format(stats.ticket_medio or 0)), 'graph-up', 'text-info'),
+    ('Nota Média',       (stats.nota_media or 0)|string ~ ' ⭐', 'star-fill', 'text-warning')
+  ] %}
+  <div class="col-6 col-xl-3">
+    <div class="card border-0 shadow-sm h-100">
+      <div class="card-body d-flex align-items-center gap-3">
+        <i class="bi bi-{{ icon }} fs-2 {{ color }}"></i>
+        <div>
+          <div class="text-muted small">{{ label }}</div>
+          <div class="fw-bold fs-5">{{ val }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Status em aberto -->
+<div class="row g-3 mb-4">
+  {% for label, val, status, color in [
+    ('Aguardando', stats.aguardando, 'recebido', 'bg-secondary'),
+    ('Em Produção', stats.em_producao, 'em_producao', 'bg-warning'),
+    ('Na Entrega', stats.na_entrega, 'saiu_para_entrega', 'bg-info')
+  ] %}
+  <div class="col-4">
+    <a href="{{ url_for('admin.pedidos', status=status) }}" class="text-decoration-none">
+      <div class="card border-0 shadow-sm text-center py-3">
+        <div class="fw-bold fs-3">{{ val }}</div>
+        <span class="badge {{ color }} mt-1">{{ label }}</span>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Faturamento mensal + pedidos recentes -->
+<div class="row g-4">
+  <div class="col-lg-5">
+    <div class="card border-0 shadow-sm h-100">
+      <div class="card-body">
+        <h6 class="fw-semibold mb-3">Faturamento Mensal</h6>
+        <canvas id="chartFat" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between mb-3">
+          <h6 class="fw-semibold mb-0">Pedidos Recentes</h6>
+          <a href="{{ url_for('admin.pedidos') }}" class="btn btn-sm btn-outline-secondary rounded-pill">Ver todos</a>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-sm table-hover align-middle small">
+            <thead class="text-muted"><tr>
+              <th>#</th><th>Cliente</th><th>Status</th><th>Total</th>
+            </tr></thead>
+            <tbody>
+              {% for p in recentes %}
+              <tr onclick="location='{{ url_for('admin.pedido_detalhe', pedido_id=p.id) }}'" style="cursor:pointer">
+                <td>#{{ p.id }}</td>
+                <td>{{ p.cliente.split()[0] }}</td>
+                <td><span class="badge status-{{ p.status }}">{{ p.status.replace('_',' ') }}</span></td>
+                <td class="fw-medium text-orange">R$ {{ '%.2f'|format(p.total) }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+  const labels = {{ fat_mensal|map(attribute='mes')|list|tojson }};
+  const data   = {{ fat_mensal|map(attribute='faturamento')|list|tojson }};
+  new Chart(document.getElementById('chartFat'), {
+    type: 'bar',
+    data: {
+      labels: labels.reverse(),
+      datasets: [{ label: 'R$', data: data.reverse(),
+        backgroundColor: '#f97316', borderRadius: 6, borderSkipped: false }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false } },
+        y: { ticks: { callback: v => 'R$' + v.toLocaleString('pt-BR') } }
+      }
+    }
+  });
+</script>
+{% endblock %}

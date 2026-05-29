@@ -1,0 +1,814 @@
+/* ================================================================
+   PIZZARIA JABLONSK — Design System
+   Aesthetic: Trattoria Notturna
+   Fonts: Playfair Display (headings) + DM Sans (body)
+================================================================ */
+
+:root {
+  /* Warm dark palette */
+  --bg:          #0d0a07;
+  --bg-2:        #141009;
+  --bg-3:        #1a1208;
+  --card:        #1f1710;
+  --card-2:      #26190f;
+  --card-3:      #2e2013;
+
+  /* Borders */
+  --border:      #3a2b1a;
+  --border-2:    #4a3825;
+  --border-h:    rgba(249,115,22,.45);
+
+  /* Brand */
+  --orange:      #f97316;
+  --orange-h:    #ea6c0a;
+  --orange-dim:  rgba(249,115,22,.12);
+  --orange-glow: rgba(249,115,22,.25);
+  --gold:        #d4a853;
+  --gold-soft:   rgba(212,168,83,.08);
+
+  /* Text */
+  --text:        #f0e6d8;
+  --text-2:      #c4a98a;
+  --text-3:      #9c7e62;
+  --text-4:      #64493a;
+
+  /* Fonts */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Radii */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+
+  /* Shadows */
+  --shadow-card:  0 4px 24px rgba(0,0,0,.5);
+  --shadow-hover: 0 12px 40px rgba(0,0,0,.55), 0 0 0 1px var(--border-h);
+  --shadow-glow:  0 0 24px var(--orange-glow);
+}
+
+/* ================================================================
+   RESET & BASE
+================================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Grain texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: .038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ================================================================
+   TYPOGRAPHY
+================================================================ */
+h1, h2, h3, h4, h5, h6,
+.display-heading, .fw-bold.fs-4, .fw-bold, .navbar-brand {
+  font-family: var(--font-display);
+}
+
+/* Override — keep utility weights from Bootstrap working */
+.fw-normal   { font-weight: 400 !important; }
+.fw-medium   { font-weight: 500 !important; }
+.fw-semibold { font-weight: 600 !important; }
+.fw-bold     { font-weight: 700 !important; }
+
+/* ================================================================
+   SCROLLBAR
+================================================================ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 99px; }
+
+/* ================================================================
+   BOOTSTRAP DARK THEME OVERRIDES
+================================================================ */
+[data-bs-theme="dark"] {
+  --bs-body-bg:           var(--bg);
+  --bs-body-color:        var(--text);
+  --bs-border-color:      var(--border);
+  --bs-card-bg:           var(--card);
+  --bs-card-border-color: var(--border);
+  --bs-dropdown-bg:       var(--card-2);
+  --bs-dropdown-border-color: var(--border);
+  --bs-dropdown-link-color:   var(--text-2);
+  --bs-dropdown-link-hover-bg: rgba(255,255,255,.06);
+  --bs-dropdown-link-hover-color: var(--text);
+  --bs-input-bg:          var(--card-2);
+  --bs-input-border-color: var(--border);
+  --bs-input-color:       var(--text);
+}
+
+.form-control, .form-select {
+  background: var(--card-2) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+  border-radius: var(--r-sm) !important;
+}
+
+.form-control:focus, .form-select:focus {
+  background: var(--card-2) !important;
+  border-color: var(--orange) !important;
+  color: var(--text) !important;
+  box-shadow: 0 0 0 3px rgba(249,115,22,.15) !important;
+}
+
+.form-control::placeholder { color: var(--text-4) !important; }
+
+.form-label { color: var(--text-2); font-size: .875rem; font-weight: 500; margin-bottom: .4rem; }
+
+.dropdown-menu {
+  background: var(--card-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r-md) !important;
+  box-shadow: var(--shadow-card);
+}
+
+.dropdown-item {
+  color: var(--text-2) !important;
+  border-radius: var(--r-xs) !important;
+  font-size: .9rem;
+}
+
+.dropdown-item:hover {
+  background: rgba(255,255,255,.06) !important;
+  color: var(--text) !important;
+}
+
+.dropdown-divider { border-color: var(--border) !important; }
+
+hr { border-color: var(--border) !important; opacity: 1 !important; }
+
+/* Alert overrides */
+.alert {
+  border-radius: var(--r-md) !important;
+  border: none;
+  font-size: .9rem;
+}
+.alert-success { background: rgba(22,163,74,.15) !important; color: #4ade80 !important; }
+.alert-danger  { background: rgba(220,38,38,.15) !important; color: #f87171 !important; }
+.alert-warning { background: rgba(217,119,6,.15) !important; color: #fbbf24 !important; }
+.alert-info    { background: rgba(8,145,178,.15) !important; color: #38bdf8 !important; }
+.alert-primary { background: rgba(249,115,22,.15) !important; color: var(--orange) !important; }
+
+/* ================================================================
+   NAVBAR
+================================================================ */
+#main-nav {
+  background: rgba(13,10,7,.94) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(249,115,22,.1) !important;
+  padding: .75rem 0;
+}
+
+.navbar-brand {
+  font-family: var(--font-display) !important;
+  font-size: 1.45rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -.02em;
+  color: var(--text) !important;
+  line-height: 1;
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-2) !important;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: .88rem;
+  letter-spacing: .01em;
+  padding: .45rem .8rem !important;
+  border-radius: var(--r-xs) !important;
+  transition: all .2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--text) !important;
+  background: rgba(255,255,255,.05);
+}
+
+.navbar-toggler {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r-xs) !important;
+  color: var(--text-2) !important;
+}
+
+.badge-cart {
+  position: absolute;
+  top: -3px; right: -5px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 50%;
+  width: 17px; height: 17px;
+  font-size: .58rem;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  border: 2px solid var(--bg);
+}
+
+/* ================================================================
+   FOOTER
+================================================================ */
+footer {
+  background: var(--bg-2) !important;
+  border-top: 1px solid var(--border) !important;
+  color: var(--text-3) !important;
+  font-size: .83rem;
+  font-family: var(--font-body);
+}
+
+/* ================================================================
+   BUTTONS
+================================================================ */
+.btn-orange {
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: all .22s cubic-bezier(.25,.46,.45,.94);
+}
+
+.btn-orange:hover, .btn-orange:focus {
+  background: var(--orange-h);
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.btn-orange:active { transform: translateY(0); }
+
+.btn-outline-orange {
+  border: 1.5px solid var(--orange);
+  color: var(--orange);
+  background: transparent;
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: all .22s;
+}
+
+.btn-outline-orange:hover {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 0 16px var(--orange-glow);
+  transform: translateY(-1px);
+}
+
+.btn-outline-secondary {
+  border-color: var(--border-2) !important;
+  color: var(--text-2) !important;
+  font-family: var(--font-body);
+}
+
+.btn-outline-secondary:hover {
+  background: rgba(255,255,255,.07) !important;
+  border-color: var(--border-2) !important;
+  color: var(--text) !important;
+}
+
+.btn-outline-danger {
+  border-color: rgba(220,38,38,.4) !important;
+  color: #f87171 !important;
+}
+
+.btn-outline-danger:hover {
+  background: rgba(220,38,38,.15) !important;
+  border-color: rgba(220,38,38,.6) !important;
+  color: #fca5a5 !important;
+}
+
+/* ================================================================
+   UTILITY CLASSES
+================================================================ */
+.text-orange       { color: var(--orange) !important; }
+.text-gold         { color: var(--gold) !important; }
+.text-muted        { color: var(--text-3) !important; }
+.bg-orange         { background: var(--orange) !important; }
+.bg-orange-soft    { background: var(--orange-dim) !important; }
+.bg-card           { background: var(--bg-3) !important; }
+.border-orange-soft{ border-color: rgba(249,115,22,.2) !important; }
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: .6rem;
+}
+
+/* ================================================================
+   HERO SECTION
+================================================================ */
+.hero-section {
+  position: relative;
+  padding: 6rem 0 5rem;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Warm radial glows */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -15%; right: -8%;
+  width: 640px; height: 640px;
+  background: radial-gradient(circle, rgba(249,115,22,.11) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -15%; left: -5%;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(212,168,83,.06) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+/* Eyebrow tag */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: rgba(249,115,22,.1);
+  border: 1px solid rgba(249,115,22,.22);
+  border-radius: 99px;
+  padding: .3rem 1rem .3rem .75rem;
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #fb923c;
+  margin-bottom: 1.4rem;
+  animation: fade-up .5s ease both;
+}
+
+.hero-title {
+  font-family: var(--font-display) !important;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+  color: var(--text);
+  margin-bottom: 1.4rem;
+  animation: fade-up .5s .1s ease both;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--orange);
+}
+
+.hero-sub {
+  color: var(--text-3);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 440px;
+  margin-bottom: 2.2rem;
+  animation: fade-up .5s .2s ease both;
+}
+
+.hero-cta {
+  animation: fade-up .5s .3s ease both;
+}
+
+/* Stats strip */
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+  animation: fade-up .5s .4s ease both;
+}
+
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: .75rem;
+  color: var(--text-3);
+  margin-top: .2rem;
+}
+
+/* ================================================================
+   CARDS
+================================================================ */
+.card {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r-lg) !important;
+}
+
+.card-hover:hover {
+  border-color: var(--border-h) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  transition: all .25s cubic-bezier(.25,.46,.45,.94);
+}
+
+.card-pizza {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r-lg) !important;
+  transition: all .25s cubic-bezier(.25,.46,.45,.94);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-pizza:hover {
+  border-color: var(--border-h) !important;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-pizza .card-img-top {
+  border-radius: 0 !important;
+}
+
+/* Empty image placeholder */
+.card-pizza-icon {
+  position: relative;
+  text-align: center;
+  padding: 1.5rem 0 .5rem;
+}
+
+/* Card badge */
+.card-pizza .card-body .badge {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 99px;
+  padding: .3em .7em;
+}
+
+/* Card footer */
+.card-pizza .card-footer {
+  background: rgba(0,0,0,.15) !important;
+  border-top: 1px solid var(--border) !important;
+  padding: .75rem 1rem;
+}
+
+/* ================================================================
+   FEATURE CARDS (Home)
+================================================================ */
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: all .25s;
+}
+
+.feature-card:hover {
+  border-color: rgba(249,115,22,.3);
+  background: rgba(249,115,22,.04);
+}
+
+.feature-icon-wrap {
+  width: 54px; height: 54px;
+  background: var(--orange-dim);
+  border: 1px solid rgba(249,115,22,.22);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  color: var(--orange);
+  margin: 0 auto 1.1rem;
+  transition: all .25s;
+}
+
+.feature-card:hover .feature-icon-wrap {
+  background: rgba(249,115,22,.18);
+  box-shadow: 0 0 16px var(--orange-glow);
+}
+
+.feature-card h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  color: var(--text);
+}
+
+.feature-card p {
+  font-size: .85rem;
+  color: var(--text-3);
+  margin: 0;
+}
+
+/* ================================================================
+   BADGE STEP (Monte sua Pizza)
+================================================================ */
+.badge-step {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 50%;
+  font-size: .72rem;
+  font-weight: 700;
+  margin-right: .5rem;
+  flex-shrink: 0;
+  font-family: var(--font-body);
+}
+
+/* Step heading */
+.step-heading {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+/* ================================================================
+   OPT CARDS (Massa / Borda selection)
+================================================================ */
+.opt-card {
+  cursor: pointer;
+  border: 2px solid var(--border) !important;
+  border-radius: var(--r-md) !important;
+  background: var(--card) !important;
+  padding: 1rem;
+  text-align: center;
+  transition: all .2s ease;
+  user-select: none;
+}
+
+.opt-card:hover {
+  border-color: rgba(249,115,22,.5) !important;
+  transform: translateY(-2px);
+  background: rgba(249,115,22,.04) !important;
+}
+
+.opt-card.selected {
+  border-color: var(--orange) !important;
+  background: var(--orange-dim) !important;
+  box-shadow: 0 0 0 3px rgba(249,115,22,.1);
+}
+
+.opt-card .fw-semibold {
+  font-size: .9rem;
+  color: var(--text);
+}
+
+/* ================================================================
+   SABOR CARDS
+================================================================ */
+.sabor-card {
+  cursor: pointer;
+  border: 2px solid var(--border) !important;
+  border-radius: var(--r-md) !important;
+  background: var(--card) !important;
+  overflow: hidden;
+  transition: all .18s ease;
+  user-select: none;
+}
+
+.sabor-card:hover { border-color: rgba(249,115,22,.5) !important; }
+
+.sabor-card.selected {
+  border-color: var(--orange) !important;
+  background: var(--orange-dim) !important;
+}
+
+.sabor-card.disabled { opacity: .3; pointer-events: none; }
+
+/* Price preview */
+.price-preview-card {
+  background: var(--card-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r-lg) !important;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+#preco-preview {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+}
+
+/* ================================================================
+   STATUS BADGES
+================================================================ */
+.badge {
+  font-family: var(--font-body) !important;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  border-radius: 99px !important;
+  padding: .3em .75em !important;
+}
+
+.badge.status-recebido {
+  background: rgba(100,116,139,.2) !important;
+  color: #94a3b8;
+  border: 1px solid rgba(100,116,139,.3);
+}
+
+.badge.status-em_producao {
+  background: rgba(217,119,6,.18) !important;
+  color: #fbbf24;
+  border: 1px solid rgba(217,119,6,.3);
+}
+
+.badge.status-saiu_para_entrega {
+  background: rgba(8,145,178,.18) !important;
+  color: #38bdf8;
+  border: 1px solid rgba(8,145,178,.3);
+}
+
+.badge.status-entregue {
+  background: rgba(22,163,74,.18) !important;
+  color: #4ade80;
+  border: 1px solid rgba(22,163,74,.3);
+}
+
+.badge.status-cancelado {
+  background: rgba(220,38,38,.18) !important;
+  color: #f87171;
+  border: 1px solid rgba(220,38,38,.3);
+}
+
+/* ================================================================
+   TIMELINE (pedido status)
+================================================================ */
+.timeline-line {
+  position: absolute;
+  top: 19px; left: 12%; right: 12%;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.timeline-dot {
+  position: relative; z-index: 1;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: var(--text-4);
+  transition: all .3s;
+}
+
+.timeline-dot.active {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--orange-dim);
+}
+
+.timeline-dot.current {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+  box-shadow: 0 0 20px var(--orange-glow);
+}
+
+/* ================================================================
+   ADMIN SIDEBAR
+================================================================ */
+.admin-sidebar {
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  min-height: 100vh;
+}
+
+.admin-sidebar .nav-link {
+  color: var(--text-3);
+  border-radius: var(--r-xs);
+  font-weight: 500;
+  font-size: .875rem;
+  transition: all .18s;
+  padding: .55rem .9rem;
+}
+
+.admin-sidebar .nav-link:hover {
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+}
+
+.admin-sidebar .nav-link.active {
+  background: rgba(249,115,22,.12);
+  color: var(--orange);
+}
+
+/* ================================================================
+   CARRINHO — Item cards
+================================================================ */
+.cart-item-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 1rem 1.2rem;
+  margin-bottom: .75rem;
+  transition: border-color .2s;
+}
+
+.cart-item-card:hover { border-color: var(--border-2); }
+
+/* Summary card */
+.summary-card {
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.5rem;
+  position: sticky;
+  top: 80px;
+}
+
+/* ================================================================
+   TABLE
+================================================================ */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(255,255,255,.025);
+  --bs-table-hover-bg: rgba(255,255,255,.04);
+  --bs-table-border-color: var(--border);
+  color: var(--text);
+  font-size: .9rem;
+}
+
+.table th {
+  color: var(--text-3);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border) !important;
+  padding: .75rem 1rem;
+}
+
+.table td { padding: .9rem 1rem; border-color: var(--border) !important; vertical-align: middle; }
+
+/* ================================================================
+   CAT FILTER BUTTONS (Monte sua Pizza)
+================================================================ */
+.cat-btn.active {
+  background: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
+}
+
+/* ================================================================
+   STAR RATING
+================================================================ */
+.star-icon { cursor: pointer; font-size: 1.4rem; transition: transform .1s; }
+.star-icon:hover { transform: scale(1.2); }
+
+/* ================================================================
+   ANIMATIONS
+================================================================ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-up { animation: fade-up .5s ease both; }
+.animate-fade-in { animation: fade-in .4s ease both; }
+
+.anim-delay-1 { animation-delay: .1s; }
+.anim-delay-2 { animation-delay: .2s; }
+.anim-delay-3 { animation-delay: .3s; }
+.anim-delay-4 { animation-delay: .4s; }
